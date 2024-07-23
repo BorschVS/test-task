@@ -3,6 +3,7 @@ import TransferFilter from "../TransferFiler/TransferFilter";
 import PlaneImg from "../../images/plane.png";
 import CategoryFilter from "../CategoryFilter/CategoryFilter";
 import FlightCard from "../FlightCard/FlightCard";
+import { GroupBox, MainBox } from "./App.styled";
 
 const App = () => {
   return (
@@ -12,13 +13,15 @@ const App = () => {
         alt="The company logo"
         sx={{ display: "block", margin: "40px auto" }}
       />
-      <Box component="div" display="flex" justifyContent="center" gap={4}>
+      <MainBox>
         <TransferFilter />
-        <Box display="flex" flexDirection="column" gap={3}>
+        <GroupBox display="flex" flexDirection="column" gap={3}>
           <CategoryFilter />
           <FlightCard />
-        </Box>
-      </Box>
+          <FlightCard />
+          <FlightCard />
+        </GroupBox>
+      </MainBox>
     </Container>
   );
 };

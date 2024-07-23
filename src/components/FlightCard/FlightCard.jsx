@@ -11,7 +11,7 @@ import S7Airline from "../../images/s7.jpg";
 const FlightCard = () => {
   return (
     <CardBox>
-      {/* row 1 */}
+      {/* row 1 title */}
       <Box display="flex" justifyContent="space-between">
         <Title>14 000 P</Title>
         <Typography
@@ -32,11 +32,11 @@ const FlightCard = () => {
         </TextBox>
         <TextBox>
           <InfoText>в пути</InfoText>
-          <FactText>10:45 - 00:50</FactText>
+          <FactText>21ч 15м</FactText>
         </TextBox>
         <TextBox>
           <InfoText>2 пересадки</InfoText>
-          <FactText>10:45 - 00:50</FactText>
+          <FactText>HKG, JNB</FactText>
         </TextBox>
       </Box>
       {/* row 3 */}
@@ -47,11 +47,11 @@ const FlightCard = () => {
         </TextBox>
         <TextBox>
           <InfoText>в пути</InfoText>
-          <FactText>10:45 - 00:50</FactText>
+          <FactText>13ч 30м</FactText>
         </TextBox>
         <TextBox>
           <InfoText>2 пересадки</InfoText>
-          <FactText>10:45 - 00:50</FactText>
+          <FactText>HKG</FactText>
         </TextBox>
       </Box>
     </CardBox>

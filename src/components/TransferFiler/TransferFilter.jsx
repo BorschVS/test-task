@@ -10,10 +10,7 @@ import { CheckedIcon, GroupBox, UncheckedIcon } from "./TransferFilter.styled";
 
 const TransferFilter = () => {
   return (
-    <GroupBox
-      component="div"
-      sx={{ p: 2, backgroundColor: "#ffffff", width: 250 }}
-    >
+    <GroupBox>
       <Typography
         variant="h3"
         fontSize={14}

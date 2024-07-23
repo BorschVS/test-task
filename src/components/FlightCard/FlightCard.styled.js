@@ -1,11 +1,5 @@
 import styled from "@emotion/styled";
 
-// backgroundColor={(theme) => theme.palette.primary.white}
-//       padding="20px"
-//       display="flex"
-//       flexDirection="column"
-//       gap={2}
-
 export const CardBox = styled.div`
   display: flex;
   flex-direction: column;
