@@ -10,17 +10,20 @@ const theme = createTheme({
     text: {
       primary: "#676767",
       secondary: "#8a8a8a",
+      gray: "#999999",
     },
     primary: {
       main: "#3b3dcc",
-      light: "#757ce8",
-      dark: "#002884",
+      white: "#ffffff",
+      black: "#000000",
+      gray: "#cdcdcd",
       blue: "#519deb",
     },
     secondary: {
       main: "#f50057",
-      light: "#ff4081",
-      dark: "#c51162",
+      white: "#ffffff",
+      black: "#000000",
+      gray: "#fefefe",
       blue: "#519deb",
     },
     error: {
@@ -30,6 +33,7 @@ const theme = createTheme({
   typography: {
     fontFamily: "Roboto, Arial, sans-serif",
     fontWeightMedium: 500,
+    fontWeightSemiBold: 600,
     fontWeightBold: 700,
   },
 });

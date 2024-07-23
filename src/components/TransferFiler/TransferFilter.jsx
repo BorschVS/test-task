@@ -6,11 +6,14 @@ import {
   Typography,
 } from "@mui/material";
 
-import CheckBoxOutlinedIcon from "@mui/icons-material/CheckBoxOutlined";
-import CheckBoxOutlineBlankOutlinedIcon from "@mui/icons-material/CheckBoxOutlineBlankOutlined";
+import { CheckedIcon, GroupBox, UncheckedIcon } from "./TransferFilter.styled";
+
 const TransferFilter = () => {
   return (
-    <Box component="div" sx={{ p: 2, backgroundColor: "#ffffff", width: 250 }}>
+    <GroupBox
+      component="div"
+      sx={{ p: 2, backgroundColor: "#ffffff", width: 250 }}
+    >
       <Typography
         variant="h3"
         fontSize={14}
@@ -24,51 +27,36 @@ const TransferFilter = () => {
       <FormGroup>
         <FormControlLabel
           control={
-            <Checkbox
-              icon={<CheckBoxOutlineBlankOutlinedIcon />}
-              checkedIcon={<CheckBoxOutlinedIcon />}
-            />
+            <Checkbox icon={<UncheckedIcon />} checkedIcon={<CheckedIcon />} />
           }
           label="Все"
         />
         <FormControlLabel
           control={
-            <Checkbox
-              icon={<CheckBoxOutlineBlankOutlinedIcon />}
-              checkedIcon={<CheckBoxOutlinedIcon />}
-            />
+            <Checkbox icon={<UncheckedIcon />} checkedIcon={<CheckedIcon />} />
           }
           label="Без пересадок"
         />
         <FormControlLabel
           control={
-            <Checkbox
-              icon={<CheckBoxOutlineBlankOutlinedIcon />}
-              checkedIcon={<CheckBoxOutlinedIcon />}
-            />
+            <Checkbox icon={<UncheckedIcon />} checkedIcon={<CheckedIcon />} />
           }
           label="1 пересадка"
         />
         <FormControlLabel
           control={
-            <Checkbox
-              icon={<CheckBoxOutlineBlankOutlinedIcon />}
-              checkedIcon={<CheckBoxOutlinedIcon />}
-            />
+            <Checkbox icon={<UncheckedIcon />} checkedIcon={<CheckedIcon />} />
           }
           label="2 пересадки"
         />
         <FormControlLabel
           control={
-            <Checkbox
-              icon={<CheckBoxOutlineBlankOutlinedIcon />}
-              checkedIcon={<CheckBoxOutlinedIcon />}
-            />
+            <Checkbox icon={<UncheckedIcon />} checkedIcon={<CheckedIcon />} />
           }
           label="3 пересадки"
         />
       </FormGroup>
-    </Box>
+    </GroupBox>
   );
 };
 

@@ -1,11 +1,23 @@
-import { Box, Button } from "@mui/material";
+import { useTheme } from "@emotion/react";
+import {
+  RadioBox,
+  RadioButton,
+  RadioLabel,
+  RadioText,
+} from "./CategoryFilter.styled";
 
 const CategoryFilter = () => {
   return (
-    <Box component="div">
-      <Button variant="contained">Самый дешевый</Button>
-      <Button variant="contained">Самый Быстрый</Button>
-    </Box>
+    <RadioBox component="div">
+      <RadioLabel>
+        <RadioButton type="radio" name="filter" checked />
+        <RadioText>Самый дешевый</RadioText>
+      </RadioLabel>
+      <RadioLabel>
+        <RadioButton type="radio" name="filter" />
+        <RadioText>Самый быстрый</RadioText>
+      </RadioLabel>
+    </RadioBox>
   );
 };
 
