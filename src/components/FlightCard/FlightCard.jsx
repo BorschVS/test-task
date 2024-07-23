@@ -1,18 +1,18 @@
-import { Avatar, Box, Typography } from "@mui/material";
+import { Avatar, Typography } from "@mui/material";
 import {
   CardBox,
   FactText,
+  GroupBox,
   InfoText,
   TextBox,
   Title,
 } from "./FlightCard.styled";
-import S7Airline from "../../images/s7.jpg";
+import S7Airlines from "../../images/s7.jpg";
 
 const FlightCard = () => {
   return (
     <CardBox>
-      {/* row 1 title */}
-      <Box display="flex" justifyContent="space-between">
+      <GroupBox>
         <Title>14 000 P</Title>
         <Typography
           display="flex"
@@ -20,12 +20,11 @@ const FlightCard = () => {
           fontSize={24}
           fontWeight={(theme) => theme.typography.fontWeightSemiBold}
         >
-          <Avatar src={S7Airline} alt="The company logo" />
+          <Avatar src={S7Airlines} alt="S7 Airlines company logo" />
           Airlines
         </Typography>
-      </Box>
-      {/* row 2 */}
-      <Box display="flex" justifyContent="space-between">
+      </GroupBox>
+      <GroupBox>
         <TextBox>
           <InfoText>Mow - HKT</InfoText>
           <FactText>10:45 - 00:50</FactText>
@@ -38,9 +37,8 @@ const FlightCard = () => {
           <InfoText>2 пересадки</InfoText>
           <FactText>HKG, JNB</FactText>
         </TextBox>
-      </Box>
-      {/* row 3 */}
-      <Box display="flex" justifyContent="space-between">
+      </GroupBox>
+      <GroupBox>
         <TextBox>
           <InfoText>Mow - HKT</InfoText>
           <FactText>10:45 - 00:50</FactText>
@@ -53,7 +51,7 @@ const FlightCard = () => {
           <InfoText>2 пересадки</InfoText>
           <FactText>HKG</FactText>
         </TextBox>
-      </Box>
+      </GroupBox>
     </CardBox>
   );
 };

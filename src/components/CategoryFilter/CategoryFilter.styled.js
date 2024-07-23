@@ -4,8 +4,6 @@ export const RadioBox = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  align-items: flex-start;
-  flex-shrink: 0;
 
   & > label:first-of-type > input {
     border-right: none;
@@ -38,7 +36,6 @@ export const RadioButton = styled.input`
   appearance: none;
   background-color: ${({ theme }) => theme.palette.primary.white};
   margin: 0;
-  font: inherit;
   color: white;
   width: 250px;
   height: 50px;
@@ -47,8 +44,11 @@ export const RadioButton = styled.input`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+
   transition: background-color 0.3s, color 0.3s, border-color 0.3s, color 0.3s;
+
+  font: inherit;
+  cursor: pointer;
 
   &:checked {
     background-color: ${({ theme }) => theme.palette.primary.blue};

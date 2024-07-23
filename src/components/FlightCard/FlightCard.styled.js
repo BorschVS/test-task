@@ -12,6 +12,17 @@ export const CardBox = styled.div`
   background-color: ${({ theme }) => theme.palette.primary.white};
 `;
 
+export const TextBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+`;
+
+export const GroupBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 export const Title = styled.h3`
   font-size: 24px;
   font-weight: ${({ theme }) => theme.typography.fontWeightMedium};
@@ -34,10 +45,4 @@ export const FactText = styled.p`
   text-transform: uppercase;
 
   color: ${({ theme }) => theme.palette.text.primary};
-`;
-
-export const TextBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
 `;

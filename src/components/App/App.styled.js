@@ -3,8 +3,8 @@ import styled from "@emotion/styled";
 export const MainBox = styled.div`
   display: flex;
   justify-content: center;
-  gap: 32px;
   align-items: start;
+  gap: 32px;
 `;
 
 export const GroupBox = styled.div`
