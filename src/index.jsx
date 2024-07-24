@@ -1,10 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./components/App/App";
+
 import { CssBaseline } from "@mui/material";
-import theme from "./theme";
-import { GlobalStyle } from "./GlobalStyle.styled";
+
 import MixedThemeProvider from "./MixedThemeProvider";
+import App from "./components/App";
+
+import theme from "./theme";
+
+import { GlobalStyle } from "./GlobalStyle.styled";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

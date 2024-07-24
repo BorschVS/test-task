@@ -10,6 +10,10 @@ export const CardBox = styled.div`
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
   background-color: ${({ theme }) => theme.palette.primary.white};
+
+  &:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
 `;
 
 export const TextBox = styled.div`
@@ -21,14 +25,6 @@ export const TextBox = styled.div`
 export const GroupBox = styled.div`
   display: flex;
   justify-content: space-between;
-`;
-
-export const Title = styled.h3`
-  font-size: 24px;
-  font-weight: ${({ theme }) => theme.typography.fontWeightMedium};
-  text-transform: uppercase;
-
-  color: ${({ theme }) => theme.palette.primary.blue};
 `;
 
 export const InfoText = styled.p`
