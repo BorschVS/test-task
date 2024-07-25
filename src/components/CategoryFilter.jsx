@@ -3,7 +3,7 @@ import {
   RadioButton,
   RadioLabel,
   RadioText,
-} from "../styled/CategoryFilter.styled";
+} from '../styled/CategoryFilter.styled';
 
 export const CategoryFilter = () => (
   <RadioBox component="div">

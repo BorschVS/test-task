@@ -3,13 +3,13 @@ import {
   FormControlLabel,
   FormGroup,
   Typography,
-} from "@mui/material";
+} from '@mui/material';
 
 import {
   CheckedIcon,
   GroupBox,
   UncheckedIcon,
-} from "../styled/TransferFilter.styled";
+} from '../styled/TransferFilter.styled';
 
 export const TransferFilter = () => (
   <GroupBox>
