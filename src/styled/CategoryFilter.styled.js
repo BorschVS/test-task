@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const RadioBox = styled.div`
   display: flex;
@@ -52,7 +52,11 @@ export const RadioButton = styled.input`
   border: 1px solid ${({ theme }) => theme.palette.primary.gray};
   border-radius: 5px;
 
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    border-color 0.3s,
+    color 0.3s;
 
   font: inherit;
   cursor: pointer;

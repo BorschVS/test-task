@@ -1,4 +1,4 @@
-import { Avatar, Typography } from "@mui/material";
+import { Avatar, Typography } from '@mui/material';
 
 import {
   CardBox,
@@ -6,9 +6,9 @@ import {
   GroupBox,
   InfoText,
   TextBox,
-} from "../styled/FlightCard.styled";
+} from '../styled/FlightCard.styled';
 
-import S7Airlines from "../images/s7.jpg";
+import S7Airlines from '../images/s7.jpg';
 
 const FlightCard = () => (
   <CardBox>
@@ -28,7 +28,7 @@ const FlightCard = () => (
         fontWeight={(theme) => theme.typography.fontWeightBold}
       >
         <Avatar
-          component={"span"}
+          component={'span'}
           src={S7Airlines}
           alt="S7 Airlines company logo"
         />

@@ -1,5 +1,5 @@
-import { ThemeProvider as MuiThemeProvider } from "@mui/material";
-import { ThemeProvider as StyledThemeProvider } from "styled-components";
+import { ThemeProvider as MuiThemeProvider } from '@mui/material';
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
 const MixedThemeProvider = ({ theme, children }) => (
   <MuiThemeProvider theme={theme}>

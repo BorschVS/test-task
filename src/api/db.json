@@ -1,0 +1,94 @@
+{
+  "search": "11",
+  "flights": [
+    {
+      "id": "1",
+      "searchId": "11",
+      "price": 13400,
+      "carrier": "SU",
+      "segments": [
+        {
+          "origin": "SVO",
+          "destination": "JFK",
+          "date": "2024-08-01T10:45:00.000Z",
+          "stops": ["AMS", "LHR"],
+          "duration": 600
+        },
+        {
+          "origin": "JFK",
+          "destination": "SVO",
+          "date": "2024-08-10T18:30:00.000Z",
+          "stops": ["CDG"],
+          "duration": 540
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "searchId": "22",
+      "price": 15600,
+      "carrier": "AA",
+      "segments": [
+        {
+          "origin": "JFK",
+          "destination": "LAX",
+          "date": "2024-09-05T14:00:00.000Z",
+          "stops": [],
+          "duration": 360
+        },
+        {
+          "origin": "LAX",
+          "destination": "JFK",
+          "date": "2024-09-15T16:00:00.000Z",
+          "stops": [],
+          "duration": 350
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "searchId": "11",
+      "price": 9800,
+      "carrier": "DL",
+      "segments": [
+        {
+          "origin": "ATL",
+          "destination": "ORD",
+          "date": "2024-07-25T08:00:00.000Z",
+          "stops": ["CLT"],
+          "duration": 180
+        },
+        {
+          "origin": "ORD",
+          "destination": "ATL",
+          "date": "2024-07-30T12:00:00.000Z",
+          "stops": [],
+          "duration": 150
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "searchId": "11",
+      "price": 12000,
+      "carrier": "UA",
+      "segments": [
+        {
+          "origin": "IAD",
+          "destination": "SFO",
+          "date": "2024-08-10T09:00:00.000Z",
+          "stops": ["DEN"],
+          "duration": 400
+        },
+        {
+          "origin": "SFO",
+          "destination": "IAD",
+          "date": "2024-08-20T15:00:00.000Z",
+          "stops": ["ORD"],
+          "duration": 420
+        }
+      ]
+    }
+  ],
+  "stop": true
+}

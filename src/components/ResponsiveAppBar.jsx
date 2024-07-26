@@ -12,14 +12,25 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
-
-const pages = [
-  { name: 'Flights', link: '/flights' },
-  { name: 'Hotels', link: '/hotels' },
-];
+import { getFlights } from '../redux/modules/flights/actions';
+import { useDispatch } from 'react-redux';
 
 const ResponsiveAppBar = () => {
+  const dispatch = useDispatch();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+
+  const handleFlights = () => {
+    dispatch(getFlights());
+  };
+
+  const handleHotels = () => {
+    return {};
+  };
+
+  const pages = [
+    { name: 'Flights', link: '/flights', loadData: handleFlights },
+    { name: 'Hotels', link: '/hotels', loadData: handleHotels },
+  ];
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -52,19 +63,20 @@ const ResponsiveAppBar = () => {
               justifyContent: 'end',
             }}
           >
-            {pages.map(({ name, link }) => (
-              <Button
+            {pages.map(({ name, link, loadData }) => (
+              <Link
                 key={name}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                to={link}
+                style={{ textDecoration: 'none', color: 'inherit' }}
               >
-                <Link
-                  to={link}
-                  style={{ textDecoration: 'none', color: 'inherit' }}
+                <Button
+                  key={name}
+                  onClick={handleCloseNavMenu && loadData}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
                 >
                   {name}
-                </Link>
-              </Button>
+                </Button>
+              </Link>
             ))}
           </Box>
 
@@ -103,8 +115,8 @@ const ResponsiveAppBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map(({ name, link }) => (
-                <MenuItem key={name} onClick={handleCloseNavMenu}>
+              {pages.map(({ name, link, loadData }) => (
+                <MenuItem key={name} onClick={handleCloseNavMenu && loadData}>
                   <Link
                     to={link}
                     style={{ textDecoration: 'none', color: 'inherit' }}
