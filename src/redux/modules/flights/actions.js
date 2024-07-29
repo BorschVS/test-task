@@ -3,6 +3,8 @@ import {
   SET_FLIGHTS,
   SET_STOPS_FILTER,
   SET_ALL_STOPS,
+  SET_STOPS_FILTER_STATUS,
+  SET_CATEGORY_FILTER,
 } from './constants';
 
 export const getFlights = () => ({
@@ -19,6 +21,15 @@ export const setStopsFilter = (payload) => ({
   payload,
 });
 
+export const setStopsFilterStatus = () => ({
+  type: SET_STOPS_FILTER_STATUS,
+});
+
 export const setAllStops = () => ({
   type: SET_ALL_STOPS,
+});
+
+export const setCategoryFilter = (payload) => ({
+  type: SET_CATEGORY_FILTER,
+  payload,
 });

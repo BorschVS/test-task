@@ -11,26 +11,35 @@ import {
   UncheckedIcon,
 } from '../styled/TransferFilter.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { setStopsFilter, setAllStops } from '../redux/modules/flights/actions';
+import {
+  setStopsFilter,
+  setAllStops,
+  setStopsFilterStatus,
+} from '../redux/modules/flights/actions';
+import { useCallback } from 'react';
 
 export const TransferFilter = () => {
   const dispatch = useDispatch();
   const stopsFilter = useSelector((state) => state?.flights?.stopsFilter);
 
-  const handleCheckboxChange = (event) => {
-    const value = parseInt(event.target.value);
-    const newStopsFilter = stopsFilter.includes(value)
-      ? stopsFilter.filter((stop) => stop !== value)
-      : [...stopsFilter, value];
+  const handleCheckboxChange = useCallback(
+    (event) => {
+      const value = parseInt(event.target.value);
+      const newStopsFilter = stopsFilter.includes(value)
+        ? stopsFilter.filter((stop) => stop !== value)
+        : [...stopsFilter, value];
 
-    dispatch(setStopsFilter(newStopsFilter));
-  };
+      dispatch(setStopsFilter(newStopsFilter));
+      dispatch(setStopsFilterStatus());
+    },
+    [stopsFilter, dispatch]
+  );
 
   const handleAllChange = (event) => {
     if (event.target.checked) {
       dispatch(setAllStops());
     } else {
-      dispatch(setStopsFilter([]));
+      dispatch(setStopsFilter());
     }
   };
 

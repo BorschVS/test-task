@@ -41,7 +41,7 @@
           "destination": "JFK",
           "date": "2024-09-15T16:00:00.000Z",
           "stops": [],
-          "duration": 350
+          "duration": 360
         }
       ]
     },
@@ -76,16 +76,38 @@
         {
           "origin": "IAD",
           "destination": "SFO",
-          "date": "2024-08-10T09:00:00.000Z",
+          "date": "2024-08-10T08:00:00.000Z",
           "stops": ["DEN"],
           "duration": 400
         },
         {
           "origin": "SFO",
           "destination": "IAD",
-          "date": "2024-08-20T15:00:00.000Z",
+          "date": "2024-08-20T14:00:00.000Z",
           "stops": ["ORD"],
           "duration": 420
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "searchId": "11",
+      "price": 12000,
+      "carrier": "UA",
+      "segments": [
+        {
+          "origin": "IAD",
+          "destination": "SFO",
+          "date": "2024-08-10T10:00:00.000Z",
+          "stops": ["DEN", "ORD", "CLT"],
+          "duration": 480
+        },
+        {
+          "origin": "SFO",
+          "destination": "IAD",
+          "date": "2024-08-20T18:00:00.000Z",
+          "stops": ["ORD", "CLT", "DEN"],
+          "duration": 480
         }
       ]
     }

@@ -12,15 +12,37 @@ import {
 } from '../components/index';
 
 import PlaneImg from '../images/plane.png';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import {
+  getFlights,
+  setStopsFilterStatus,
+} from '../redux/modules/flights/actions';
 
 const Flights = () => {
   const theme = useTheme();
-
   const mobile = useMediaQuery(theme.breakpoints.down('md'));
-  const tablet = useMediaQuery(theme.breakpoints.up('md'));
 
-  const flights = useSelector((state) => state?.flights?.availableFlights);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getFlights());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(setStopsFilterStatus());
+  }, [dispatch]);
+
+  const stopsFilterStatus = useSelector(
+    (state) => state?.flights?.stopsFilterStatus
+  );
+
+  const availableFlights = useSelector(
+    (state) => state?.flights?.availableFlights
+  );
+  const filteredFlights = useSelector(
+    (state) => state?.flights?.filteredFlights
+  );
 
   return (
     <main>
@@ -44,7 +66,7 @@ const Flights = () => {
         <Grid
           container
           spacing={mobile ? 2 : 4}
-          direction={`${(mobile && 'column') || (tablet && 'row')}`}
+          direction={`${mobile ? 'column' : 'row'}`}
           justifyContent={'center'}
         >
           <Grid item xs={4} md={5} justifyContent={'center'}>
@@ -52,8 +74,12 @@ const Flights = () => {
           </Grid>
           <Grid item xs={7}>
             <CategoryFilter />
-            {flights.length ? (
-              flights.map((flight) => (
+            {stopsFilterStatus ? (
+              filteredFlights.map((flight) => (
+                <FlightCard key={flight.id} flightData={flight} />
+              ))
+            ) : !stopsFilterStatus && !filteredFlights.length ? (
+              availableFlights.map((flight) => (
                 <FlightCard key={flight.id} flightData={flight} />
               ))
             ) : (

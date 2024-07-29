@@ -12,7 +12,6 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   const dispatch = useDispatch();
-  // const tickets = useSelector(state => state?.)
   const handleFlights = () => {
     dispatch(getFlights());
   };
