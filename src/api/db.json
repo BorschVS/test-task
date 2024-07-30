@@ -110,6 +110,116 @@
           "duration": 480
         }
       ]
+    },
+    {
+      "id": "6",
+      "searchId": "11",
+      "price": 14000,
+      "carrier": "BA",
+      "segments": [
+        {
+          "origin": "LHR",
+          "destination": "DXB",
+          "date": "2024-08-15T07:00:00.000Z",
+          "stops": ["IST"],
+          "duration": 420
+        },
+        {
+          "origin": "DXB",
+          "destination": "LHR",
+          "date": "2024-08-25T11:00:00.000Z",
+          "stops": ["IST"],
+          "duration": 420
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "searchId": "11",
+      "price": 18000,
+      "carrier": "EK",
+      "segments": [
+        {
+          "origin": "DXB",
+          "destination": "SYD",
+          "date": "2024-09-01T23:00:00.000Z",
+          "stops": ["SIN"],
+          "duration": 960
+        },
+        {
+          "origin": "SYD",
+          "destination": "DXB",
+          "date": "2024-09-15T06:00:00.000Z",
+          "stops": ["SIN"],
+          "duration": 960
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "searchId": "11",
+      "price": 8500,
+      "carrier": "LH",
+      "segments": [
+        {
+          "origin": "FRA",
+          "destination": "ORD",
+          "date": "2024-10-01T10:00:00.000Z",
+          "stops": [],
+          "duration": 540
+        },
+        {
+          "origin": "ORD",
+          "destination": "FRA",
+          "date": "2024-10-15T14:00:00.000Z",
+          "stops": [],
+          "duration": 540
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "searchId": "11",
+      "price": 16000,
+      "carrier": "AF",
+      "segments": [
+        {
+          "origin": "CDG",
+          "destination": "JFK",
+          "date": "2024-11-01T13:00:00.000Z",
+          "stops": ["AMS"],
+          "duration": 480
+        },
+        {
+          "origin": "JFK",
+          "destination": "CDG",
+          "date": "2024-11-10T17:00:00.000Z",
+          "stops": ["AMS"],
+          "duration": 480
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "searchId": "11",
+      "price": 9900,
+      "carrier": "KL",
+      "segments": [
+        {
+          "origin": "AMS",
+          "destination": "NRT",
+          "date": "2024-12-01T06:00:00.000Z",
+          "stops": [],
+          "duration": 720
+        },
+        {
+          "origin": "NRT",
+          "destination": "AMS",
+          "date": "2024-12-10T12:00:00.000Z",
+          "stops": [],
+          "duration": 720
+        }
+      ]
     }
   ],
   "stop": true

@@ -1,4 +1,4 @@
-export const getFlightDuration = (departure, duration) => {
+export const formatFlightDuration = (departure, duration) => {
   const departureDate = new Date(departure);
   
   const durationInMilliseconds = duration * 60 * 1000;

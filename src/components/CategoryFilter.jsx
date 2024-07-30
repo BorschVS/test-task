@@ -5,6 +5,7 @@ import {
   RadioLabel,
   RadioText,
 } from '../styled/CategoryFilter.styled';
+
 import { CHEAP_VALUE, FAST_VALUE } from 'constants';
 import { setCategoryFilter } from '../redux/modules/flights/actions';
 

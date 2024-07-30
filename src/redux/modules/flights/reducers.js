@@ -20,13 +20,17 @@ const flights = (state = initialState, { type, payload }) => {
     case SET_FLIGHTS:
       return {
         ...state,
-        availableFlights: Array.isArray(payload) ? payload : [],
+        availableFlights: Array.isArray(payload) ? payload.slice()
+        .sort((prev, next) => prev.price - next.price) : [],
       };
     case SET_CATEGORY_FILTER:
       if (payload === CHEAP_VALUE) {
         return {
           ...state,
           flightCategoryFilter: payload,
+          filteredFlights: state.filteredFlights
+            .slice()
+            .sort((prev, next) => prev.price - next.price),
           availableFlights: state.availableFlights
             .slice()
             .sort((prev, next) => prev.price - next.price),
@@ -36,6 +40,12 @@ const flights = (state = initialState, { type, payload }) => {
         return {
           ...state,
           flightCategoryFilter: payload,
+          filteredFlights: state.filteredFlights
+          .slice()
+          .sort(
+            (prev, next) =>
+              prev.segments[0].duration - next.segments[0].duration
+          ),
           availableFlights: state.availableFlights
             .slice()
             .sort(
@@ -44,6 +54,7 @@ const flights = (state = initialState, { type, payload }) => {
             ),
         };
       }
+      return state;
     case SET_STOPS_FILTER:
       return {
         ...state,

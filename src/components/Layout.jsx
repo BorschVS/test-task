@@ -1,8 +1,9 @@
-import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
 import { RotatingLines } from 'react-loader-spinner';
 
 import { Box } from '@mui/material';
+import { ResponsiveAppBar } from 'components';
 
 export const Layout = () => {
   return (
@@ -20,6 +21,7 @@ export const Layout = () => {
           </Box>
         }
       >
+        <ResponsiveAppBar />
         <Outlet />
       </Suspense>
     </main>

@@ -1,3 +1,6 @@
+import { useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import {
   Checkbox,
   FormControlLabel,
@@ -6,17 +9,16 @@ import {
 } from '@mui/material';
 
 import {
-  CheckedIcon,
-  GroupBox,
-  UncheckedIcon,
-} from '../styled/TransferFilter.styled';
-import { useDispatch, useSelector } from 'react-redux';
-import {
   setStopsFilter,
   setAllStops,
   setStopsFilterStatus,
 } from '../redux/modules/flights/actions';
-import { useCallback } from 'react';
+
+import {
+  CheckedIcon,
+  GroupBox,
+  UncheckedIcon,
+} from '../styled/TransferFilter.styled';
 
 export const TransferFilter = () => {
   const dispatch = useDispatch();

@@ -1,5 +1,7 @@
 import { Avatar, Typography } from '@mui/material';
 
+import { formatNumber, formatTimeRange, formatFlightDuration, formatTransfersWordEnding} from 'utils/index';
+
 import {
   CardBox,
   FactText,
@@ -8,10 +10,7 @@ import {
   TextBox,
 } from '../styled/FlightCard.styled';
 
-import S7Airlines from '../images/s7.jpg';
-import { formatTimeRange } from 'utils/formatTimeRange';
-import { getFlightDuration } from 'utils/flightDuration';
-import { getTransfersWordEnding } from 'utils/wordEnding';
+import S7Airlines from 'images/s7.jpg';
 
 const FlightCard = ({ flightData }) => {
   const outboundSegmentData = flightData.segments[0];
@@ -34,12 +33,12 @@ const FlightCard = ({ flightData }) => {
     returnSegmentData.duration
   );
 
-  const outboundFlightDuration = getFlightDuration(
+  const outboundFlightDuration = formatFlightDuration(
     outboundSegmentData.date,
     outboundSegmentData.duration
   );
 
-  const returnFlightDuration = getFlightDuration(
+  const returnFlightDuration = formatFlightDuration(
     returnSegmentData.date,
     returnSegmentData.duration
   );
@@ -56,7 +55,7 @@ const FlightCard = ({ flightData }) => {
           textTransform="uppercase"
           color={(theme) => theme.palette.primary.blue}
         >
-          {flightData.price} Р
+          {formatNumber(flightData.price)} Р
         </Typography>
         <Typography
           display="flex"
@@ -82,7 +81,7 @@ const FlightCard = ({ flightData }) => {
           <FactText>{outboundFlightDuration}</FactText>
         </TextBox>
         <TextBox>
-          <InfoText>{getTransfersWordEnding(outboundSegmentData.stops.length)}</InfoText>
+          <InfoText>{formatTransfersWordEnding(outboundSegmentData.stops.length)}</InfoText>
           <FactText>{outboundFlightTransfers}</FactText>
         </TextBox>
       </GroupBox>
@@ -96,7 +95,7 @@ const FlightCard = ({ flightData }) => {
           <FactText>{returnFlightDuration}</FactText>
         </TextBox>
         <TextBox>
-          <InfoText>{getTransfersWordEnding(returnSegmentData.stops.length)}</InfoText>
+          <InfoText>{formatTransfersWordEnding(returnSegmentData.stops.length)}</InfoText>
           <FactText>{returnFlightTransfers}</FactText>
         </TextBox>
       </GroupBox>

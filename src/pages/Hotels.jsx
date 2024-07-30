@@ -1,11 +1,9 @@
-import { Helmet } from 'react-helmet';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { Helmet } from 'react-helmet';
 import { useTheme } from '@mui/material/styles';
-
 import { Container, Avatar } from '@mui/material';
 
-import PlaneImg from '../images/plane.png';
-import ResponsiveAppBar from '../components/ResponsiveAppBar';
+import PlaneImg from 'images/plane.png';
 
 const Flights = () => {
   const theme = useTheme();
@@ -16,9 +14,7 @@ const Flights = () => {
       <Helmet>
         <title>Hotels</title>
       </Helmet>
-
-      <ResponsiveAppBar />
-
+      
       <Container maxWidth={mobile ? 'sm' : 'md'}>
         <Avatar
           src={PlaneImg}

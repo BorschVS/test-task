@@ -1,23 +1,20 @@
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet';
+
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-
 import { Container, Avatar, Grid, Typography } from '@mui/material';
 
 import {
   TransferFilter,
   CategoryFilter,
   FlightCard,
-  ResponsiveAppBar,
 } from '../components/index';
 
-import PlaneImg from '../images/plane.png';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import {
-  getFlights,
-  setStopsFilterStatus,
-} from '../redux/modules/flights/actions';
+import { getFlights } from '../redux/modules/flights/actions';
+
+import PlaneImg from 'images/plane.png';
 
 const Flights = () => {
   const theme = useTheme();
@@ -27,10 +24,6 @@ const Flights = () => {
 
   useEffect(() => {
     dispatch(getFlights());
-  }, [dispatch]);
-
-  useEffect(() => {
-    dispatch(setStopsFilterStatus());
   }, [dispatch]);
 
   const stopsFilterStatus = useSelector(
@@ -49,9 +42,6 @@ const Flights = () => {
       <Helmet>
         <title>Flights</title>
       </Helmet>
-
-      <ResponsiveAppBar />
-
       <Container maxWidth={mobile ? 'sm' : 'md'}>
         <Avatar
           src={PlaneImg}

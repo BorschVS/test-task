@@ -1,14 +1,12 @@
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import { useDispatch } from 'react-redux';
 
 import { Box, Button, Typography } from '@mui/material';
 
-import { ResponsiveAppBar } from '../components/index';
-
-import BgImg from '../images/home-bg.jpg';
-
-import { useDispatch } from 'react-redux';
 import { getFlights } from '../redux/modules/flights/actions';
-import { Link } from 'react-router-dom';
+
+import BgImg from 'images/home-bg.jpg';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -20,7 +18,6 @@ const Home = () => {
       <Helmet>
         <title>Flights</title>
       </Helmet>
-      <ResponsiveAppBar />
 
       <Box
         sx={{

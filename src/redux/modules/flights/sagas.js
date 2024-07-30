@@ -1,7 +1,7 @@
 import { takeEvery, put, call } from '@redux-saga/core/effects';
 
-import { GET_FLIGHTS } from './constants';
 import { getSearchId, getFlights } from 'api/index';
+import { GET_FLIGHTS } from './constants';
 import { setFlights } from './actions';
 
 // Worker
