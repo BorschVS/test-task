@@ -4,8 +4,12 @@ import { RotatingLines } from 'react-loader-spinner';
 
 import { Box } from '@mui/material';
 import { ResponsiveAppBar } from 'components';
+import { useModal } from 'hooks/useModal';
+import { ContactModal } from './ContactModal';
 
 export const Layout = () => {
+  const { isShowing, toggleModal } = useModal();
+
   return (
     <main>
       <Suspense
@@ -23,6 +27,7 @@ export const Layout = () => {
       >
         <ResponsiveAppBar />
         <Outlet />
+        <ContactModal isShowing={isShowing} hide={toggleModal} />
       </Suspense>
     </main>
   );

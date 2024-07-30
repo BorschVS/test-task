@@ -1,6 +1,11 @@
 import { Avatar, Typography } from '@mui/material';
 
-import { formatNumber, formatTimeRange, formatFlightDuration, formatTransfersWordEnding} from 'utils/index';
+import {
+  formatNumber,
+  formatTimeRange,
+  formatFlightDuration,
+  formatTransfersWordEnding,
+} from 'utils/index';
 
 import {
   CardBox,
@@ -11,6 +16,7 @@ import {
 } from '../styled/FlightCard.styled';
 
 import S7Airlines from 'images/s7.jpg';
+import { useModal } from 'hooks/useModal';
 
 const FlightCard = ({ flightData }) => {
   const outboundSegmentData = flightData.segments[0];
@@ -21,7 +27,6 @@ const FlightCard = ({ flightData }) => {
 
   const outboundDestination = outboundSegmentData.destination;
   const returnDestination = returnSegmentData.destination;
-
 
   const outboundFlightTime = formatTimeRange(
     outboundSegmentData.date,
@@ -45,9 +50,11 @@ const FlightCard = ({ flightData }) => {
 
   const outboundFlightTransfers = outboundSegmentData.stops.join(', ');
   const returnFlightTransfers = returnSegmentData.stops.join(', ');
+  
+  const { toggleModal } = useModal();
 
   return (
-    <CardBox>
+    <CardBox onClick={toggleModal}>
       <GroupBox>
         <Typography
           fontSize={24}
@@ -81,7 +88,9 @@ const FlightCard = ({ flightData }) => {
           <FactText>{outboundFlightDuration}</FactText>
         </TextBox>
         <TextBox>
-          <InfoText>{formatTransfersWordEnding(outboundSegmentData.stops.length)}</InfoText>
+          <InfoText>
+            {formatTransfersWordEnding(outboundSegmentData.stops.length)}
+          </InfoText>
           <FactText>{outboundFlightTransfers}</FactText>
         </TextBox>
       </GroupBox>
@@ -95,7 +104,9 @@ const FlightCard = ({ flightData }) => {
           <FactText>{returnFlightDuration}</FactText>
         </TextBox>
         <TextBox>
-          <InfoText>{formatTransfersWordEnding(returnSegmentData.stops.length)}</InfoText>
+          <InfoText>
+            {formatTransfersWordEnding(returnSegmentData.stops.length)}
+          </InfoText>
           <FactText>{returnFlightTransfers}</FactText>
         </TextBox>
       </GroupBox>
