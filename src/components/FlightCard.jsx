@@ -1,3 +1,4 @@
+import { useDispatch } from 'react-redux';
 import { Avatar, Typography } from '@mui/material';
 
 import {
@@ -6,6 +7,8 @@ import {
   formatFlightDuration,
   formatTransfersWordEnding,
 } from 'utils/index';
+import { useModal } from 'hooks/useModal';
+import { setCurrentFlight } from '../redux/modules/modal/actions';
 
 import {
   CardBox,
@@ -16,9 +19,23 @@ import {
 } from '../styled/FlightCard.styled';
 
 import S7Airlines from 'images/s7.jpg';
-import { useModal } from 'hooks/useModal';
 
 const FlightCard = ({ flightData }) => {
+  const dispatch = useDispatch();
+
+  const { isShowing, toggleModal } = useModal();
+
+  const handleCurrentFlight = () => {
+    dispatch(setCurrentFlight(flightData.id));
+  };
+
+  const handleModal = () => {
+    if (isShowing) return;
+
+    toggleModal();
+    handleCurrentFlight();
+  };
+
   const outboundSegmentData = flightData.segments[0];
   const returnSegmentData = flightData.segments[1];
 
@@ -50,11 +67,9 @@ const FlightCard = ({ flightData }) => {
 
   const outboundFlightTransfers = outboundSegmentData.stops.join(', ');
   const returnFlightTransfers = returnSegmentData.stops.join(', ');
-  
-  const { toggleModal } = useModal();
 
   return (
-    <CardBox onClick={toggleModal}>
+    <CardBox onClick={handleModal} isShowing={isShowing}>
       <GroupBox>
         <Typography
           fontSize={24}

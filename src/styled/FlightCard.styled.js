@@ -13,12 +13,26 @@ export const CardBox = styled.div`
   
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
+
+  ${({ isShowing }) => isShowing && `
+  box-shadow: none;
+  transform: scale(1);
+  cursor: default; !important
+`}
+
   &:hover {
     transform: scale(1.04);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 
+    ${({ isShowing }) => isShowing && `
+    box-shadow: none;
+    transform: scale(1);
+  `}
+
   cursor: pointer;
   }
+
+
 
   &:not(:last-of-type) {
     margin-bottom: 20px;

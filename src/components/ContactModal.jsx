@@ -1,4 +1,6 @@
 import { createPortal } from 'react-dom';
+import { useSelector } from 'react-redux';
+
 import {
   Button,
   Dialog,
@@ -8,9 +10,20 @@ import {
   IconButton,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+
+import { FlightCard } from 'components';
 import { Form } from './Form';
 
-export const ContactModal = ({ isShowing, hide }) => {
+const ContactModal = ({ isShowing, hide }) => {
+  const availableFlights = useSelector(
+    (state) => state.flights.availableFlights
+  );
+
+  const currentFlightId = useSelector((state) => state.modal.flightId);
+  const currentFlightData = availableFlights.filter(
+    (flight) => flight.id === currentFlightId
+  );
+
   return isShowing
     ? createPortal(
         <Dialog
@@ -19,7 +32,6 @@ export const ContactModal = ({ isShowing, hide }) => {
           aria-labelledby="form-dialog-title"
         >
           <DialogTitle id="form-dialog-title">
-
             <IconButton
               aria-label="close"
               onClick={hide}
@@ -28,7 +40,8 @@ export const ContactModal = ({ isShowing, hide }) => {
               <CloseIcon />
             </IconButton>
           </DialogTitle>
-          <DialogContent>
+          <DialogContent sx={{marginTop: 2}}>
+            <FlightCard flightData={currentFlightData[0]}/>
             <Form />
           </DialogContent>
           <DialogActions>
@@ -41,3 +54,5 @@ export const ContactModal = ({ isShowing, hide }) => {
       )
     : null;
 };
+
+export default ContactModal;

@@ -10,7 +10,6 @@ export function* handleAvailableFlights() {
     const data = yield call(getSearchId);
     const flights = yield call(getFlights, data);
     yield put(setFlights(flights));
-    console.log(flights);
   } catch (error) {
     throw new Error(error.message);
   }

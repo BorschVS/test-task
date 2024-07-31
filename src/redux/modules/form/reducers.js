@@ -1,24 +1,17 @@
 import {
-  SET_IS_SHOWING,
-  SET_CURRENT_FLIGHT
+  SET_FORM_DATA
 } from './constants';
 
 const initialState = {
-  isShowing: false,
-  flightId: 0,
+  formData: {},
 };
 
 const modal = (state = initialState, { type, payload }) => {
   switch (type) {
-    case SET_IS_SHOWING:
+    case SET_FORM_DATA:
       return {
         ...state,
-        isShowing: payload
-      };
-      case SET_CURRENT_FLIGHT:
-      return {
-        ...state,
-        flightId: payload,
+        formData: payload
       };
     default:
       return state;

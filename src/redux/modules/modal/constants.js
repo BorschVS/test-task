@@ -1,1 +1,2 @@
 export const SET_IS_SHOWING = 'SET_IS_SHOWING';
+export const SET_CURRENT_FLIGHT = 'SET_CURRENT_FLIGHT';

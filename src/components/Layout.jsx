@@ -3,9 +3,10 @@ import { Outlet } from 'react-router-dom';
 import { RotatingLines } from 'react-loader-spinner';
 
 import { Box } from '@mui/material';
+
 import { ResponsiveAppBar } from 'components';
 import { useModal } from 'hooks/useModal';
-import { ContactModal } from './ContactModal';
+import ContactModal from './ContactModal';
 
 export const Layout = () => {
   const { isShowing, toggleModal } = useModal();

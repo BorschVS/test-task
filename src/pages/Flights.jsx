@@ -4,22 +4,15 @@ import { Helmet } from 'react-helmet';
 
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-import { Container, Avatar, Grid, Typography } from '@mui/material';
+import { Container, Avatar, Grid } from '@mui/material';
 
-import {
-  TransferFilter,
-  CategoryFilter,
-  FlightCard,
-} from '../components/index';
+import { TransferFilter, CategoryFilter, FlightCard } from '../components';
 
 import { getFlights } from '../redux/modules/flights/actions';
 
 import PlaneImg from 'images/plane.png';
 
 const Flights = () => {
-  const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down('md'));
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -36,6 +29,9 @@ const Flights = () => {
   const filteredFlights = useSelector(
     (state) => state?.flights?.filteredFlights
   );
+
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <main>
@@ -64,24 +60,15 @@ const Flights = () => {
           </Grid>
           <Grid item xs={7}>
             <CategoryFilter />
-            {stopsFilterStatus ? (
-              filteredFlights.map((flight) => (
-                <FlightCard key={flight.id} flightData={flight} />
-              ))
-            ) : !stopsFilterStatus && !filteredFlights.length ? (
-              availableFlights.map((flight) => (
-                <FlightCard key={flight.id} flightData={flight} />
-              ))
-            ) : (
-              <Typography
-                variant="h4"
-                fontSize={16}
-                textAlign="center"
-                textTransform="uppercase"
-              >
-                Рейсы отсутствуют
-              </Typography>
-            )}
+            {stopsFilterStatus
+              ? filteredFlights.map((flight) => (
+                  <FlightCard key={flight.id} flightData={flight} />
+                ))
+              : !stopsFilterStatus &&
+                !filteredFlights.length &&
+                availableFlights.map((flight) => (
+                  <FlightCard key={flight.id} flightData={flight} />
+                ))}
           </Grid>
         </Grid>
       </Container>
