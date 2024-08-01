@@ -1,14 +1,18 @@
 import { useDispatch } from 'react-redux';
-import { Avatar, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
+
+import { AvatarImage } from 'components';
+
+import { useModal } from 'hooks/useModal';
+
+import { setCurrentFlight } from '../redux/ducks/modal';
 
 import {
   formatNumber,
   formatTimeRange,
   formatFlightDuration,
   formatTransfersWordEnding,
-} from 'utils/index';
-import { useModal } from 'hooks/useModal';
-import { setCurrentFlight } from '../redux/modules/modal/actions';
+} from 'utils';
 
 import {
   CardBox,
@@ -16,9 +20,7 @@ import {
   GroupBox,
   InfoText,
   TextBox,
-} from '../styled/FlightCard.styled';
-
-import S7Airlines from 'images/s7.jpg';
+} from 'styled/FlightCard.styled';
 
 const FlightCard = ({ flightData }) => {
   const dispatch = useDispatch();
@@ -85,9 +87,9 @@ const FlightCard = ({ flightData }) => {
           fontSize={24}
           fontWeight={(theme) => theme.typography.fontWeightBold}
         >
-          <Avatar
-            component={'span'}
-            src={S7Airlines}
+          <AvatarImage
+            component="span"
+            imageName="s7.jpg"
             alt="S7 Airlines company logo"
           />
           Airlines

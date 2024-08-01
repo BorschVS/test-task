@@ -2,32 +2,26 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { useDispatch } from 'react-redux';
 
-import { Box, Button, Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 
-import { getFlights } from '../redux/modules/flights/actions';
+import { BackgroundImage } from 'components';
 
-import BgImg from 'images/home-bg.jpg';
+import { getFlights } from '../redux/ducks/flights';
 
 const Home = () => {
   const dispatch = useDispatch();
+
   const handleFlights = () => {
     dispatch(getFlights());
   };
+
   return (
     <main>
       <Helmet>
         <title>Flights</title>
       </Helmet>
 
-      <Box
-        sx={{
-          width: '100%',
-          height: '100vh',
-          backgroundImage: `url(${BgImg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
+      <BackgroundImage imageName="home-bg.jpg">
         <Typography
           textAlign="center"
           variant="h1"
@@ -80,7 +74,7 @@ const Home = () => {
             FLY!
           </Button>
         </Link>
-      </Box>
+      </BackgroundImage>
     </main>
   );
 };

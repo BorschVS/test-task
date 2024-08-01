@@ -11,8 +11,7 @@ import {
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
-import { FlightCard } from 'components';
-import { Form } from './Form';
+import { FlightCard, Form } from 'components';
 
 const ContactModal = ({ isShowing, hide }) => {
   const availableFlights = useSelector(
@@ -40,13 +39,13 @@ const ContactModal = ({ isShowing, hide }) => {
               <CloseIcon />
             </IconButton>
           </DialogTitle>
-          <DialogContent sx={{marginTop: 2}}>
-            <FlightCard flightData={currentFlightData[0]}/>
+          <DialogContent sx={{ marginTop: 2 }}>
+            <FlightCard flightData={currentFlightData[0]} />
             <Form />
           </DialogContent>
           <DialogActions>
             <Button onClick={hide} color="primary">
-              Cancel
+              Отмена
             </Button>
           </DialogActions>
         </Dialog>,

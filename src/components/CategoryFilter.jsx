@@ -1,13 +1,14 @@
 import { useDispatch } from 'react-redux';
+
+import { CHEAP_VALUE, FAST_VALUE } from 'constants';
+import { setCategoryFilter } from '../redux/ducks/flights';
+
 import {
   RadioBox,
   RadioButton,
   RadioLabel,
   RadioText,
-} from '../styled/CategoryFilter.styled';
-
-import { CHEAP_VALUE, FAST_VALUE } from 'constants';
-import { setCategoryFilter } from '../redux/modules/flights/actions';
+} from 'styled/CategoryFilter.styled';
 
 export const CategoryFilter = () => {
   const dispatch = useDispatch();

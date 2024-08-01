@@ -12,13 +12,13 @@ import {
   setStopsFilter,
   setAllStops,
   setStopsFilterStatus,
-} from '../redux/modules/flights/actions';
+} from '../redux/ducks/flights';
 
 import {
   CheckedIcon,
   GroupBox,
   UncheckedIcon,
-} from '../styled/TransferFilter.styled';
+} from 'styled/TransferFilter.styled';
 
 export const TransferFilter = () => {
   const dispatch = useDispatch();

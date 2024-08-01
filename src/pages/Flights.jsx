@@ -1,16 +1,20 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet';
+import { RotatingLines } from 'react-loader-spinner';
 
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-import { Container, Avatar, Grid } from '@mui/material';
+import { Container, Grid, Box, Typography } from '@mui/material';
 
-import { TransferFilter, CategoryFilter, FlightCard } from '../components';
+import {
+  TransferFilter,
+  CategoryFilter,
+  FlightCard,
+  AvatarImage,
+} from 'components';
 
-import { getFlights } from '../redux/modules/flights/actions';
-
-import PlaneImg from 'images/plane.png';
+import { getFlights } from '../redux/ducks/flights';
 
 const Flights = () => {
   const dispatch = useDispatch();
@@ -19,16 +23,13 @@ const Flights = () => {
     dispatch(getFlights());
   }, [dispatch]);
 
-  const stopsFilterStatus = useSelector(
-    (state) => state?.flights?.stopsFilterStatus
-  );
-
-  const availableFlights = useSelector(
-    (state) => state?.flights?.availableFlights
-  );
-  const filteredFlights = useSelector(
-    (state) => state?.flights?.filteredFlights
-  );
+  const {
+    availableFlights,
+    filteredFlights,
+    stopsFilterStatus,
+    loading,
+    error,
+  } = useSelector((state) => state?.flights);
 
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -39,15 +40,13 @@ const Flights = () => {
         <title>Flights</title>
       </Helmet>
       <Container maxWidth={mobile ? 'sm' : 'md'}>
-        <Avatar
-          src={PlaneImg}
-          alt="The company logo"
-          sx={{
-            display: 'block',
-            margin: '40px auto',
-            width: 60,
-            height: 60,
-          }}
+        <AvatarImage
+          imageName={'plane.png'}
+          alt="Lets fly logo"
+          component="div"
+          margin="40px auto"
+          width={60}
+          height={60}
         />
         <Grid
           container
@@ -60,15 +59,42 @@ const Flights = () => {
           </Grid>
           <Grid item xs={7}>
             <CategoryFilter />
-            {stopsFilterStatus
-              ? filteredFlights.map((flight) => (
-                  <FlightCard key={flight.id} flightData={flight} />
-                ))
-              : !stopsFilterStatus &&
-                !filteredFlights.length &&
-                availableFlights.map((flight) => (
-                  <FlightCard key={flight.id} flightData={flight} />
-                ))}
+            {loading ? (
+              <Box
+                component="div"
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                marginTop={4}
+              >
+                <RotatingLines width="4rem" strokeColor="#0e91fc" />
+              </Box>
+            ) : !error && stopsFilterStatus ? (
+              filteredFlights.map((flight) => (
+                <FlightCard key={flight.id} flightData={flight} />
+              ))
+            ) : (
+              !error &&
+              !stopsFilterStatus &&
+              !filteredFlights.length &&
+              availableFlights.map((flight) => (
+                <FlightCard key={flight.id} flightData={flight} />
+              ))
+            )}
+            {!loading &&
+              !error &&
+              !availableFlights.length &&
+              !filteredFlights.length && (
+                <Typography
+                  fontSize={18}
+                  fontWeight={(theme) => theme.typography.fontWeightMedium}
+                  textAlign={'center'}
+                  textTransform="uppercase"
+                  color={(theme) => theme.palette.text.primary}
+                >
+                  Рейсы отсутствуют
+                </Typography>
+              )}
           </Grid>
         </Grid>
       </Container>

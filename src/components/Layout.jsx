@@ -4,11 +4,11 @@ import { RotatingLines } from 'react-loader-spinner';
 
 import { Box } from '@mui/material';
 
-import { ResponsiveAppBar } from 'components';
-import { useModal } from 'hooks/useModal';
-import ContactModal from './ContactModal';
+import { ResponsiveAppBar, ContactModal } from 'components';
 
-export const Layout = () => {
+import { useModal } from 'hooks/useModal';
+
+const Layout = () => {
   const { isShowing, toggleModal } = useModal();
 
   return (
@@ -33,3 +33,5 @@ export const Layout = () => {
     </main>
   );
 };
+
+export default Layout;

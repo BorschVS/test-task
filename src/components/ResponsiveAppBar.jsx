@@ -1,6 +1,7 @@
-import PlaneImg from '../images/plane.png';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
-import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -8,16 +9,16 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import { Link } from 'react-router-dom';
-import { getFlights } from '../redux/modules/flights/actions';
-import { useDispatch } from 'react-redux';
+
+import { AvatarImage } from 'components';
+
+import { getFlights } from '../redux/ducks/flights';
 
 const ResponsiveAppBar = () => {
   const dispatch = useDispatch();
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleFlights = () => {
     dispatch(getFlights());
@@ -45,15 +46,10 @@ const ResponsiveAppBar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Link to="/">
-            <Avatar
-              src={PlaneImg}
-              alt="The company logo"
-              sx={{
-                display: 'block',
-                width: 40,
-                height: 40,
-                margin: '0 20px 0 0',
-              }}
+            <AvatarImage
+              component="div"
+              imageName="plane.png"
+              alt="Lets fly logo"
             />
           </Link>
           <Box

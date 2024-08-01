@@ -1,14 +1,16 @@
 import { useDispatch } from 'react-redux';
-import * as Yup from 'yup';
 import { useFormik } from 'formik';
+import * as Yup from 'yup';
+
 import { Button, TextField } from '@mui/material';
 
-import { setFormData } from '../redux/modules/form/actions';
-
-import { FormStyled } from 'styled/Form.styled';
 import { useModal } from 'hooks/useModal';
 
-export const Form = () => {
+import { setFormData } from '../redux/ducks/form';
+
+import { FormStyled } from 'styled/Form.styled';
+
+const Form = () => {
   const dispatch = useDispatch();
 
   const { toggleModal } = useModal();
@@ -23,11 +25,11 @@ export const Form = () => {
       name: Yup.string().required('Введите имя'),
       phone: Yup.number().required('Введите номер'),
       email: Yup.string()
-        .email('Введите правильный email')
+        .email('Введите корректный email')
         .required('Введите email'),
     }),
     onSubmit: (values) => {
-      dispatch(setFormData(JSON.stringify(values, null, 2)));
+      dispatch(setFormData(values));
       dispatch(toggleModal());
     },
   });
@@ -82,3 +84,5 @@ export const Form = () => {
     </FormStyled>
   );
 };
+
+export default Form;

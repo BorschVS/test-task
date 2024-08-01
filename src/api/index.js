@@ -11,7 +11,7 @@ export const getSearchId = async () => {
   }
 };
 
-export const getFlights = async (searchId) => {
+export const getFlightsData = async (searchId) => {
   try {
     const response = await axios.get(`/flights?searchId=${searchId}`);
     return response.data;

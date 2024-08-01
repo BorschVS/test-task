@@ -1,5 +1,5 @@
 //react
-import React from 'react';
+import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 //redux
@@ -17,7 +17,7 @@ import { GlobalStyle } from './GlobalStyle.styled';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <StrictMode>
     <BrowserRouter basename="/">
       <MixedThemeProvider theme={theme}>
         <CssBaseline />
@@ -27,5 +27,5 @@ root.render(
         </Provider>
       </MixedThemeProvider>
     </BrowserRouter>
-  </React.StrictMode>
+  </StrictMode>
 );
