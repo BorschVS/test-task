@@ -5,7 +5,6 @@ import * as Yup from 'yup';
 import { Button, TextField } from '@mui/material';
 
 import { useModal } from 'hooks/useModal';
-
 import { setFormData } from '../redux/ducks/form';
 
 import { FormStyled } from 'styled/Form.styled';

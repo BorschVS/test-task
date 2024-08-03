@@ -22,7 +22,7 @@ const initialState = {
     error: null
 };
 
-export default function flightsReducer(state = initialState, { type, payload }) {
+export const flights = (state = initialState, { type, payload }) => {
     switch (type) {
         case SET_FLIGHTS:
             return {

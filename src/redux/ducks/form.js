@@ -4,7 +4,7 @@ const initialState = {
     formData: "",
 };
 
-export default function form(state = initialState, { type, payload }) {
+export const form = (state = initialState, { type, payload }) => {
     switch (type) {
         case SET_FORM_DATA:
             return {

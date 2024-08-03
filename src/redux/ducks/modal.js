@@ -6,7 +6,7 @@ const initialState = {
     flightId: 0,
 };
 
-export default function modal(state = initialState, { type, payload }) {
+export const modal = (state = initialState, { type, payload }) => {
     switch (type) {
         case SET_IS_SHOWING:
             return {

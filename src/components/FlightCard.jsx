@@ -2,9 +2,7 @@ import { useDispatch } from 'react-redux';
 import { Typography } from '@mui/material';
 
 import { AvatarImage } from 'components';
-
 import { useModal } from 'hooks/useModal';
-
 import { setCurrentFlight } from '../redux/ducks/modal';
 
 import {
