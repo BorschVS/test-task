@@ -1,15 +1,15 @@
-import { ModalState } from 'interfaces';
-import { ModalActions } from 'types';
+import { ModalState } from 'types/interfaces';
+import { ModalActions } from 'types/types';
 
 export const SET_IS_SHOWING = 'SET_IS_SHOWING';
 export const SET_CURRENT_FLIGHT = 'SET_CURRENT_FLIGHT';
 
 const initialState: ModalState = {
   isShowing: false,
-  flightId: 0,
+  flightId: '',
 };
 
-export const modalReducer = (state = initialState, action: ModalActions) => {
+export const modal = (state = initialState, action: ModalActions) => {
   switch (action.type) {
     case SET_IS_SHOWING:
       return {
@@ -31,7 +31,7 @@ export const setIsShowing = (payload: boolean) => ({
   payload,
 });
 
-export const setCurrentFlight = (payload: number): ModalActions => ({
+export const setCurrentFlight = (payload: string) => ({
   type: SET_CURRENT_FLIGHT,
   payload,
 });

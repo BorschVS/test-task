@@ -9,9 +9,10 @@ import { useModal } from 'hooks/useModal';
 import { setFormData } from '../redux/ducks/form';
 
 import { FormStyled } from 'styled/Form.styled';
+import { AppDispatch } from 'redux/configureStore';
 
 const Form = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const { toggleModal } = useModal();
 
@@ -29,8 +30,8 @@ const Form = () => {
         .required('Введите email'),
     }),
     onSubmit: (values) => {
-      dispatch(setFormData(values));
-      dispatch(toggleModal());
+      dispatch(setFormData(JSON.stringify(values)));
+      toggleModal();
     },
   });
 

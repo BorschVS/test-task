@@ -1,11 +1,6 @@
-import {
-  GetImageFailureAction,
-  GetImageRequestAction,
-  GetImageSuccessAction,
-  ImagesState,
-} from 'interfaces';
+import { GetImageRequestAction, ImagesState } from 'types/interfaces';
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { ImagesActions } from 'types';
+import { ImagesActions } from 'types/types';
 
 export const GET_IMAGE_REQUEST = 'GET_IMAGE_REQUEST';
 export const GET_IMAGE_SUCCESS = 'GET_IMAGE_SUCCESS';
@@ -19,7 +14,7 @@ const initialState: ImagesState = {
 
 // reducer
 
-export const imagesReducer = (state = initialState, action: ImagesActions) => {
+export const images = (state = initialState, action: ImagesActions) => {
   switch (action.type) {
     case GET_IMAGE_REQUEST:
       return {
@@ -49,20 +44,17 @@ export const imagesReducer = (state = initialState, action: ImagesActions) => {
 
 // actions
 
-export const getImageRequest = (payload: string): GetImageRequestAction => ({
+export const getImageRequest = (payload: string) => ({
   type: GET_IMAGE_REQUEST,
   payload: payload,
 });
 
-export const getImageSuccess = (
-  imageName: string,
-  imageUrl: string
-): GetImageSuccessAction => ({
+export const getImageSuccess = (imageName: string, imageUrl: string) => ({
   type: GET_IMAGE_SUCCESS,
   payload: { imageName, imageUrl },
 });
 
-export const getImageFailure = (error: string): GetImageFailureAction => ({
+export const getImageFailure = (error: Error | string) => ({
   type: GET_IMAGE_FAILURE,
   payload: error,
 });

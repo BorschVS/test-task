@@ -5,8 +5,8 @@ import { Avatar } from '@mui/material';
 
 import { getImageRequest } from '../redux/ducks/images';
 
-import { Image } from 'interfaces';
-
+import { Image } from 'types/interfaces';
+import { AppDispatch } from 'redux/configureStore';
 
 const AvatarImage: FC<Image> = ({
   imageName,
@@ -16,7 +16,7 @@ const AvatarImage: FC<Image> = ({
   height = 40,
   margin = '0',
 }) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     dispatch(getImageRequest(imageName));

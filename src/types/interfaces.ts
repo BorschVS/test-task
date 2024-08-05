@@ -1,4 +1,4 @@
-import { ReactNode, ElementType } from 'react';
+import { ReactNode, ElementType, MouseEventHandler } from 'react';
 
 import { SET_FORM_DATA } from '../redux/ducks/form';
 import { CHEAP_VALUE, FAST_VALUE } from '../constants';
@@ -13,12 +13,12 @@ import {
   SET_STOPS_FILTER_STATUS,
   SET_CATEGORY_FILTER,
 } from '../redux/ducks/flights';
-import { SET_CURRENT_FLIGHT, SET_IS_SHOWING } from 'redux/ducks/modal';
+import { SET_CURRENT_FLIGHT, SET_IS_SHOWING } from '../redux/ducks/modal';
 import {
   GET_IMAGE_FAILURE,
   GET_IMAGE_REQUEST,
   GET_IMAGE_SUCCESS,
-} from 'redux/ducks/images';
+} from '../redux/ducks/images';
 
 export interface FlightData {
   id: string;
@@ -36,13 +36,9 @@ export interface FlightSegments {
   duration: number;
 }
 
-export interface FlightCardProps {
-  flightData: FlightData;
-}
-
 // redux
 
-export interface FlightState {
+export interface FlightsState {
   availableFlights: FlightData[];
   filteredFlights: FlightData[];
   stopsFilter: string[];
@@ -54,7 +50,7 @@ export interface FlightState {
 
 export interface ModalState {
   isShowing: boolean;
-  flightId: number;
+  flightId: string;
 }
 
 export interface FormState {
@@ -62,10 +58,10 @@ export interface FormState {
 }
 
 export interface ReduxState {
-  flightsReducer: FlightState;
-  modalReducer: ModalState;
-  formReducer: FormState;
-  imagesReducer: ImagesState;
+  flights: FlightsState;
+  modal: ModalState;
+  form: FormState;
+  images: ImagesState;
 }
 
 export interface ImagesState {
@@ -216,7 +212,13 @@ export interface GetImageFailureAction {
   payload: string;
 }
 
-export type ImageActions =
-  | GetImageRequestAction
-  | GetImageSuccessAction
-  | GetImageFailureAction;
+// Props
+
+export interface FlightCardProps {
+  flightData: FlightData;
+}
+
+export interface ModalProps {
+  isShowing: boolean;
+  hide: MouseEventHandler<HTMLDivElement>;
+}

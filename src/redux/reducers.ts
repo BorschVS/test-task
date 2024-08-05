@@ -1,16 +1,11 @@
 import { combineReducers } from 'redux';
-import {
-  flightsReducer,
-  formReducer,
-  modalReducer,
-  imagesReducer,
-} from './ducks';
+import { flights, form, modal, images } from './ducks';
 
 export const rootReducer = combineReducers({
-  flightsReducer,
-  formReducer,
-  modalReducer,
-  imagesReducer,
+  flights,
+  form,
+  modal,
+  images,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import { Typography } from '@mui/material';
 
-import { FlightCardProps } from 'interfaces';
+import { FlightCardProps } from 'types/interfaces';
 
 import { AvatarImage } from 'components';
 
@@ -80,7 +80,7 @@ const FlightCard: FC<FlightCardProps> = ({ flightData }) => {
           fontSize={24}
           fontWeight={(theme) => theme.typography.fontWeightMedium}
           textTransform="uppercase"
-          color={(theme) => theme.palette.primary.blue}
+          color={(theme) => theme.palette.primary.contrastText}
         >
           {formatNumber(flightData.price)} Р
         </Typography>

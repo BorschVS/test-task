@@ -2,7 +2,7 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'http://localhost:4444';
 
-export const getSearchId = async (): Promise<any> => {
+export const getSearchId = async (): Promise<string> => {
   try {
     const response = await axios.get('/search');
     return response.data;

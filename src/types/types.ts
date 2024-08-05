@@ -15,11 +15,11 @@ import {
   GetImageRequestAction,
   GetImageSuccessAction,
   GetImageFailureAction,
-} from 'interfaces';
+} from '../types/interfaces';
 
 // /flights
 
-export type FlightActions =
+export type FlightsActions =
   | GetFlightsAction
   | SetFlightsAction
   | SetFlightsLoadingAction

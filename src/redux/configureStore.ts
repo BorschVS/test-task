@@ -9,7 +9,7 @@ declare global {
   }
 }
 
-export type AppDispatch = typeof store.dispatch;
+export type AppDispatch = (typeof store)['dispatch'];
 
 const sagaMiddleware = createSagaMiddleware();
 

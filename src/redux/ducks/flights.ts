@@ -4,15 +4,13 @@ import { FAST_VALUE, CHEAP_VALUE } from '../../constants';
 import { getSearchId, getFlightsData } from 'api';
 import {
   FlightData,
-  FlightState,
+  FlightsState,
   GetFlightsAction,
-  SetAllStopsAction,
-  SetCategoryFilterAction,
   SetFlightsAction,
   SetFlightsLoadingAction,
   SetStopsFilterAction,
-} from 'interfaces';
-import { FlightActions, FlightCategory } from 'types';
+} from 'types/interfaces';
+import { FlightsActions, FlightCategory } from 'types/types';
 
 export const GET_FLIGHTS = 'GET_FLIGHTS';
 export const SET_FLIGHTS = 'SET_FLIGHTS';
@@ -23,7 +21,7 @@ export const SET_ALL_STOPS = 'SET_ALL_STOPS';
 export const SET_STOPS_FILTER_STATUS = 'SET_STOPS_FILTER_STATUS';
 export const SET_CATEGORY_FILTER = 'SET_CATEGORY_FILTER';
 
-const initialState: FlightState = {
+const initialState: FlightsState = {
   availableFlights: [],
   filteredFlights: [],
   stopsFilter: [],
@@ -33,7 +31,7 @@ const initialState: FlightState = {
   error: null,
 };
 
-export const flightsReducer = (state = initialState, action: FlightActions) => {
+export const flights = (state = initialState, action: FlightsActions) => {
   switch (action.type) {
     case SET_FLIGHTS:
       return {
@@ -116,7 +114,7 @@ export const flightsReducer = (state = initialState, action: FlightActions) => {
   }
 };
 
-export const getFlights = (): GetFlightsAction => ({
+export const getFlights = () => ({
   type: GET_FLIGHTS,
 });
 
@@ -141,7 +139,7 @@ export const setFlightsError = (payload: Error) => {
   };
 };
 
-export const setStopsFilter = (payload: number[]): SetStopsFilterAction => ({
+export const setStopsFilter = (payload: string[]) => ({
   type: SET_STOPS_FILTER,
   payload,
 });
@@ -150,13 +148,11 @@ export const setStopsFilterStatus = () => ({
   type: SET_STOPS_FILTER_STATUS,
 });
 
-export const setAllStops = (): SetAllStopsAction => ({
+export const setAllStops = () => ({
   type: SET_ALL_STOPS,
 });
 
-export const setCategoryFilter = (
-  payload: FlightCategory
-): SetCategoryFilterAction => ({
+export const setCategoryFilter = (payload: FlightCategory) => ({
   type: SET_CATEGORY_FILTER,
   payload,
 });

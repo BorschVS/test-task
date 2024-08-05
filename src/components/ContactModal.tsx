@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { createPortal } from 'react-dom';
 import { useSelector } from 'react-redux';
 
@@ -12,13 +13,16 @@ import {
 import CloseIcon from '@mui/icons-material/Close';
 
 import { FlightCard, Form } from 'components';
+import { ModalProps, ReduxState } from 'types/interfaces';
 
-const ContactModal = ({ isShowing, hide }) => {
+const ContactModal: FC<ModalProps> = ({ isShowing, hide }) => {
   const availableFlights = useSelector(
-    (state) => state.flights.availableFlights
+    (state: ReduxState) => state.flights.availableFlights
   );
 
-  const currentFlightId = useSelector((state) => state.modal.flightId);
+  const currentFlightId = useSelector(
+    (state: ReduxState) => state.modal.flightId
+  );
   const currentFlightData = availableFlights.filter(
     (flight) => flight.id === currentFlightId
   );
@@ -33,7 +37,7 @@ const ContactModal = ({ isShowing, hide }) => {
           <DialogTitle id="form-dialog-title">
             <IconButton
               aria-label="close"
-              onClick={hide}
+              onClose={hide}
               style={{ position: 'absolute', right: 8, top: 8 }}
             >
               <CloseIcon />
