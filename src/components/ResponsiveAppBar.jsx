@@ -20,17 +20,9 @@ const ResponsiveAppBar = () => {
   const dispatch = useDispatch();
   const [anchorElNav, setAnchorElNav] = useState(null);
 
-  const handleFlights = () => {
-    dispatch(getFlights());
-  };
-
-  const handleHotels = () => {
-    return {};
-  };
-
   const pages = [
-    { name: 'Flights', link: '/flights', loadData: handleFlights },
-    { name: 'Hotels', link: '/hotels', loadData: handleHotels },
+    { name: 'Flights', link: '/flights' },
+    { name: 'Hotels', link: '/hotels' },
   ];
 
   const handleOpenNavMenu = (event) => {
@@ -38,6 +30,11 @@ const ResponsiveAppBar = () => {
   };
 
   const handleCloseNavMenu = () => {
+    pages.forEach((page) => {
+      if (page.name === 'Flights') {
+        dispatch(getFlights());
+      }
+    });
     setAnchorElNav(null);
   };
 
@@ -59,7 +56,7 @@ const ResponsiveAppBar = () => {
               justifyContent: 'end',
             }}
           >
-            {pages.map(({ name, link, loadData }) => (
+            {pages.map(({ name, link }) => (
               <Link
                 key={name}
                 to={link}
@@ -67,7 +64,7 @@ const ResponsiveAppBar = () => {
               >
                 <Button
                   key={name}
-                  onClick={handleCloseNavMenu && loadData}
+                  onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
                   {name}
@@ -111,8 +108,8 @@ const ResponsiveAppBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map(({ name, link, loadData }) => (
-                <MenuItem key={name} onClick={handleCloseNavMenu && loadData}>
+              {pages.map(({ name, link }) => (
+                <MenuItem key={name} onClick={handleCloseNavMenu}>
                   <Link
                     to={link}
                     style={{ textDecoration: 'none', color: 'inherit' }}
