@@ -70,7 +70,7 @@ export interface ReduxState {
   images: ImagesState;
 }
 
-// flights
+// /flights
 
 // actions
 

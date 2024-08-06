@@ -1,12 +1,7 @@
 import { SyntheticEvent, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import {
-  Checkbox,
-  FormControlLabel,
-  FormGroup,
-  Typography,
-} from '@mui/material';
+import { Checkbox, FormGroup, Typography } from '@mui/material';
 
 import {
   setAllStops,
@@ -20,6 +15,7 @@ import { AppDispatch } from 'redux/configureStore';
 import {
   CheckedIcon,
   GroupBox,
+  StyledFormControlLabel,
   UncheckedIcon,
 } from 'styled/TransferFilter.styled';
 
@@ -63,7 +59,7 @@ export const TransferFilter = () => {
         Количество пересадок
       </Typography>
       <FormGroup>
-        <FormControlLabel
+        <StyledFormControlLabel
           control={
             <Checkbox
               icon={<UncheckedIcon />}
@@ -75,7 +71,7 @@ export const TransferFilter = () => {
           }
           label="Все"
         />
-        <FormControlLabel
+        <StyledFormControlLabel
           control={
             <Checkbox
               icon={<UncheckedIcon />}
@@ -87,7 +83,7 @@ export const TransferFilter = () => {
           }
           label="Без пересадок"
         />
-        <FormControlLabel
+        <StyledFormControlLabel
           control={
             <Checkbox
               icon={<UncheckedIcon />}
@@ -99,7 +95,7 @@ export const TransferFilter = () => {
           }
           label="1 пересадка"
         />
-        <FormControlLabel
+        <StyledFormControlLabel
           control={
             <Checkbox
               icon={<UncheckedIcon />}
@@ -111,7 +107,7 @@ export const TransferFilter = () => {
           }
           label="2 пересадки"
         />
-        <FormControlLabel
+        <StyledFormControlLabel
           control={
             <Checkbox
               icon={<UncheckedIcon />}

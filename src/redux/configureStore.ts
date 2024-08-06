@@ -1,5 +1,6 @@
-import { createStore, applyMiddleware, compose, Store } from 'redux';
+import { applyMiddleware, compose, Store } from 'redux';
 import createSagaMiddleware from '@redux-saga/core';
+import { legacy_createStore as createStore } from 'redux';
 
 import rootSaga from './saga';
 import { RootState, rootReducer } from './reducers';
@@ -20,7 +21,7 @@ const configureStore = (
   preloadedState?: Partial<RootState>
 ): Store<RootState> =>
   createStore(
-    rootReducer,
+    rootReducer, // @ts-ignore preloadedState
     preloadedState,
     composeEnhancers(applyMiddleware(sagaMiddleware))
   );

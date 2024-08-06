@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
 import CheckBoxOutlineBlankOutlinedIcon from '@mui/icons-material/CheckBoxOutlineBlankOutlined';
 import theme from '../theme';
+import { FormControlLabel } from '@mui/material';
 
 export const GroupBox = styled.div`
   width: 100%;
@@ -11,6 +12,12 @@ export const GroupBox = styled.div`
 
   border-radius: 5px;
 `;
+
+export const StyledFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
+  '& .MuiFormControlLabel-label': {
+    fontWeight: theme.typography.fontWeightMedium,
+  },
+}));
 
 export const UncheckedIcon = styled(CheckBoxOutlineBlankOutlinedIcon)`
   color: ${theme.palette.primary.contrastText};
