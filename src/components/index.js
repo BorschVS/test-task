@@ -1,4 +1,10 @@
 export { default as App } from './App';
+export { default as Layout } from './Layout';
 export { default as CategoryFilter } from './CategoryFilter';
 export { default as FlightCard } from './FlightCard';
 export { default as TransferFilter } from './TransferFilter';
+export { default as ResponsiveAppBar } from './ResponsiveAppBar';
+export { default as ContactModal } from './ContactModal';
+export { default as Form } from './Form';
+export { default as AvatarImage } from './AvatarImage';
+export { default as BackgroundImage } from './BackgroundImage';

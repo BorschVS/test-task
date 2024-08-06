@@ -1,43 +1,20 @@
-import React from 'react';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
+import { lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import { Container, Avatar, Grid } from '@mui/material';
+import { Layout } from 'components';
 
-import { TransferFilter, CategoryFilter, FlightCard } from './index';
+const Home = lazy(() => import('../pages/Home'));
+const Flights = lazy(() => import('../pages/Flights'));
+const Hotels = lazy(() => import('../pages/Hotels'));
 
-import PlaneImg from '../images/plane.png';
-
-const App = () => {
-  const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down('md'));
-  const tablet = useMediaQuery(theme.breakpoints.up('md'));
-
-  return (
-    <Container maxWidth={mobile ? 'sm' : 'md'}>
-      <Avatar
-        src={PlaneImg}
-        alt="The company logo"
-        sx={{ display: 'block', margin: '40px auto', width: 60, height: 60 }}
-      />
-      <Grid
-        container
-        spacing={mobile ? 2 : 4}
-        direction={`${(mobile && 'column') || (tablet && 'row')}`}
-        justifyContent={'center'}
-      >
-        <Grid item xs={4} md={5} justifyContent={'center'}>
-          <TransferFilter />
-        </Grid>
-        <Grid item xs={7}>
-          <CategoryFilter />
-          <FlightCard />
-          <FlightCard />
-          <FlightCard />
-        </Grid>
-      </Grid>
-    </Container>
-  );
-};
+const App = () => (
+  <Routes>
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Home />} />
+      <Route path="flights" element={<Flights />} />
+      <Route path="hotels" element={<Hotels />} />
+    </Route>
+  </Routes>
+);
 
 export default App;
