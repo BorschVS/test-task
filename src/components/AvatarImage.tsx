@@ -3,10 +3,10 @@ import { useDispatch } from 'react-redux';
 
 import { Avatar } from '@mui/material';
 
-import { getImageRequest } from '../redux/ducks/images';
-
 import { Image } from 'types/interfaces';
 import { AppDispatch } from 'redux/configureStore';
+
+import { getImageRequest } from '../redux/ducks/images';
 
 const AvatarImage: FC<Image> = ({
   imageName,

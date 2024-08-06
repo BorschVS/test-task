@@ -20,6 +20,8 @@ import {
   GET_IMAGE_SUCCESS,
 } from '../redux/ducks/images';
 
+// redux
+
 export interface FlightData {
   id: string;
   searchId: string;
@@ -36,16 +38,14 @@ export interface FlightSegments {
   duration: number;
 }
 
-// redux
-
 export interface FlightsState {
   availableFlights: FlightData[];
   filteredFlights: FlightData[];
-  stopsFilter: string[];
+  stopsFilter: number[];
   stopsFilterStatus: boolean;
   flightCategoryFilter: string;
   loading: boolean;
-  error: Error | null;
+  error: Error | string | null;
 }
 
 export interface ModalState {
@@ -57,75 +57,17 @@ export interface FormState {
   formData: string;
 }
 
-export interface ReduxState {
-  flights: FlightsState;
-  modal: ModalState;
-  form: FormState;
-  images: ImagesState;
-}
-
 export interface ImagesState {
   images: { [key: string]: string };
   loading: boolean;
   error: string | null;
 }
 
-// theme
-
-export interface Theme {
-  palette: {
-    background: {
-      default: string;
-      paper: string;
-    };
-    text: {
-      primary: string;
-      secondary: string;
-      disabled: string;
-    };
-    primary: {
-      main: string;
-      light: string;
-      dark: string;
-      contrastText: string;
-    };
-    secondary: {
-      main: string;
-      light: string;
-      dark: string;
-      contrastText: string;
-    };
-    error: {
-      main: string;
-    };
-  };
-  typography: {
-    fontFamily: string;
-    fontWeightMedium: number;
-    fontWeightRegular: number;
-    fontWeightBold: number;
-  };
-  breakpoints: {
-    values: {
-      xs: number;
-      sm: number;
-      md: number;
-      lg: number;
-      xl: number;
-    };
-  };
-}
-
-// image
-
-export interface Image {
-  imageName: string;
-  alt?: string;
-  component?: ElementType;
-  children?: ReactNode;
-  width?: number;
-  height?: number;
-  margin?: string;
+export interface ReduxState {
+  flights: FlightsState;
+  modal: ModalState;
+  form: FormState;
+  images: ImagesState;
 }
 
 // flights
@@ -158,10 +100,12 @@ export interface SetStopsFilterAction {
 
 export interface SetAllStopsAction {
   type: typeof SET_ALL_STOPS;
+  payload: number[];
 }
 
 export interface SetStopsFilterStatusAction {
   type: typeof SET_STOPS_FILTER_STATUS;
+  payload: boolean;
 }
 
 export interface SetCategoryFilterAction {
@@ -220,5 +164,63 @@ export interface FlightCardProps {
 
 export interface ModalProps {
   isShowing: boolean;
-  hide: MouseEventHandler<HTMLDivElement>;
+  hide: MouseEventHandler<HTMLAnchorElement>;
+}
+
+// image
+
+export interface Image {
+  imageName: string;
+  alt?: string;
+  component?: ElementType;
+  children?: ReactNode;
+  width?: number;
+  height?: number;
+  margin?: string;
+}
+
+// theme
+
+export interface Theme {
+  palette: {
+    background: {
+      default: string;
+      paper: string;
+    };
+    text: {
+      primary: string;
+      secondary: string;
+      disabled: string;
+    };
+    primary: {
+      main: string;
+      light: string;
+      dark: string;
+      contrastText: string;
+    };
+    secondary: {
+      main: string;
+      light: string;
+      dark: string;
+      contrastText: string;
+    };
+    error: {
+      main: string;
+    };
+  };
+  typography: {
+    fontFamily: string;
+    fontWeightMedium: number;
+    fontWeightRegular: number;
+    fontWeightBold: number;
+  };
+  breakpoints: {
+    values: {
+      xs: number;
+      sm: number;
+      md: number;
+      lg: number;
+      xl: number;
+    };
+  };
 }

@@ -7,7 +7,7 @@ const initialState: FormState = {
   formData: '',
 };
 
-export const form = (state = initialState, action: FormActions) => {
+export const form = (state = initialState, action: FormActions): FormState => {
   switch (action.type) {
     case SET_FORM_DATA:
       return {

@@ -1,5 +1,5 @@
 import { ThemeProvider as MuiThemeProvider } from '@mui/material';
-import { Theme } from 'interfaces';
+import { Theme } from 'types/interfaces';
 import { ReactNode } from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 

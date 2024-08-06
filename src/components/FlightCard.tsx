@@ -2,13 +2,13 @@ import { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import { Typography } from '@mui/material';
 
-import { FlightCardProps } from 'types/interfaces';
-
 import { AvatarImage } from 'components';
 
 import { useModal } from 'hooks/useModal';
 
 import { setCurrentFlight } from '../redux/ducks/modal';
+
+import { FlightCardProps } from 'types/interfaces';
 
 import {
   formatNumber,

@@ -2,14 +2,7 @@ import { takeEvery, put, call } from '@redux-saga/core/effects';
 
 import { FAST_VALUE, CHEAP_VALUE } from '../../constants';
 import { getSearchId, getFlightsData } from 'api';
-import {
-  FlightData,
-  FlightsState,
-  GetFlightsAction,
-  SetFlightsAction,
-  SetFlightsLoadingAction,
-  SetStopsFilterAction,
-} from 'types/interfaces';
+import { FlightData, FlightsState } from 'types/interfaces';
 import { FlightsActions, FlightCategory } from 'types/types';
 
 export const GET_FLIGHTS = 'GET_FLIGHTS';
@@ -31,7 +24,10 @@ const initialState: FlightsState = {
   error: null,
 };
 
-export const flights = (state = initialState, action: FlightsActions) => {
+export const flights = (
+  state = initialState,
+  action: FlightsActions
+): FlightsState => {
   switch (action.type) {
     case SET_FLIGHTS:
       return {
@@ -118,14 +114,12 @@ export const getFlights = () => ({
   type: GET_FLIGHTS,
 });
 
-export const setFlights = (payload: FlightData[]): SetFlightsAction => ({
+export const setFlights = (payload: FlightData[]) => ({
   type: SET_FLIGHTS,
   payload,
 });
 
-export const setFlightsLoading = (
-  payload: boolean
-): SetFlightsLoadingAction => {
+export const setFlightsLoading = (payload: boolean) => {
   return {
     type: SET_FLIGHTS_LOADING,
     payload,
@@ -139,7 +133,7 @@ export const setFlightsError = (payload: Error) => {
   };
 };
 
-export const setStopsFilter = (payload: string[]) => ({
+export const setStopsFilter = (payload: number[]) => ({
   type: SET_STOPS_FILTER,
   payload,
 });

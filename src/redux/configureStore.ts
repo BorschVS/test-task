@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware, compose, Store } from 'redux';
 import createSagaMiddleware from '@redux-saga/core';
+
 import rootSaga from './saga';
 import { RootState, rootReducer } from './reducers';
 
@@ -9,7 +10,7 @@ declare global {
   }
 }
 
-export type AppDispatch = (typeof store)['dispatch'];
+export type AppDispatch = typeof store.dispatch;
 
 const sagaMiddleware = createSagaMiddleware();
 

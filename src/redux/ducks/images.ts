@@ -14,7 +14,10 @@ const initialState: ImagesState = {
 
 // reducer
 
-export const images = (state = initialState, action: ImagesActions) => {
+export const images = (
+  state = initialState,
+  action: ImagesActions
+): ImagesState => {
   switch (action.type) {
     case GET_IMAGE_REQUEST:
       return {
@@ -68,7 +71,7 @@ function* getImage(action: GetImageRequestAction) {
     if (!response.ok) {
       throw new Error('Response was not ok');
     }
-    yield put(getImageSuccess(action.payload, imageUrl));
+    yield put(getImageSuccess(imageUrl, imageUrl));
   } catch (error) {
     yield put(
       getImageFailure(error instanceof Error ? error.message : 'Unknown error')

@@ -7,9 +7,10 @@ import { Button, Typography } from '@mui/material';
 import { BackgroundImage } from 'components';
 
 import { getFlights } from '../redux/ducks/flights';
+import { AppDispatch } from 'redux/configureStore';
 
 const Home = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const handleFlights = () => {
     dispatch(getFlights());
@@ -26,7 +27,7 @@ const Home = () => {
           textAlign="center"
           variant="h1"
           fontSize={40}
-          padding="100px 0 0 0"
+          padding="120px 0 0 0"
           fontWeight={(theme) => theme.typography.fontWeightMedium}
           textTransform="uppercase"
           color={(theme) => theme.palette.primary.light}
@@ -36,6 +37,7 @@ const Home = () => {
             sx={{
               color: (theme) => theme.palette.primary.contrastText,
               backgroundColor: (theme) => theme.palette.primary.light,
+              fontSize: '40px',
               borderRadius: '10px',
               padding: '6px',
             }}
@@ -51,7 +53,7 @@ const Home = () => {
           margin="40px 0"
           fontWeight={(theme) => theme.typography.fontWeightMedium}
           textTransform="uppercase"
-          color={(theme) => theme.palette.primary.white}
+          color={(theme) => theme.palette.primary.light}
         >
           PRESS THE BUTTON TO FLY!
         </Typography>
@@ -62,11 +64,11 @@ const Home = () => {
               display: 'block',
               margin: '0 auto',
               padding: '8px 60px',
-              color: (theme) => theme.palette.primary.white,
-              backgroundColor: (theme) => theme.palette.primary.blue,
+              color: (theme) => theme.palette.primary.light,
+              backgroundColor: (theme) => theme.palette.primary.contrastText,
               fontSize: 24,
               ':hover': {
-                backgroundColor: (theme) => theme.palette.primary.darkBlue,
+                backgroundColor: (theme) => theme.palette.background.paper,
               },
             }}
             onClick={handleFlights}

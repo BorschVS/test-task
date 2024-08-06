@@ -6,7 +6,7 @@ const theme = createTheme({
   palette: {
     background: {
       default: '#f0f0f0',
-      paper: '#ffffff', // white
+      paper: '#0066cc', // white
     },
     text: {
       primary: '#676767',
@@ -23,7 +23,7 @@ const theme = createTheme({
       main: '#ffffff',
       light: '#3b3dcc',
       dark: '#cdcdcd',
-      contrastText: '#519deb', //blue
+      contrastText: '#0066cc', // darkBlue
     },
     error: {
       main: red.A400,

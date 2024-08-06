@@ -1,2 +1,2 @@
-export const CHEAP_VALUE: string = 'cheap';
-export const FAST_VALUE: string = 'fast';
+export const CHEAP_VALUE: string = 'CHEAP_VALUE';
+export const FAST_VALUE: string = 'FAST_VALUE';

@@ -7,9 +7,9 @@ import { Button, TextField } from '@mui/material';
 import { useModal } from 'hooks/useModal';
 
 import { setFormData } from '../redux/ducks/form';
+import { AppDispatch } from 'redux/configureStore';
 
 import { FormStyled } from 'styled/Form.styled';
-import { AppDispatch } from 'redux/configureStore';
 
 const Form = () => {
   const dispatch = useDispatch<AppDispatch>();

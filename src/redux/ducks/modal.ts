@@ -9,7 +9,10 @@ const initialState: ModalState = {
   flightId: '',
 };
 
-export const modal = (state = initialState, action: ModalActions) => {
+export const modal = (
+  state = initialState,
+  action: ModalActions
+): ModalState => {
   switch (action.type) {
     case SET_IS_SHOWING:
       return {
@@ -19,7 +22,7 @@ export const modal = (state = initialState, action: ModalActions) => {
     case SET_CURRENT_FLIGHT:
       return {
         ...state,
-        flightId: action.payload,
+        flightId: action.payload.toString(),
       };
     default:
       return state;

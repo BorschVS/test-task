@@ -3,16 +3,16 @@ import { createPortal } from 'react-dom';
 import { useSelector } from 'react-redux';
 
 import {
-  Button,
   Dialog,
-  DialogActions,
   DialogContent,
   DialogTitle,
   IconButton,
+  Paper,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
 import { FlightCard, Form } from 'components';
+
 import { ModalProps, ReduxState } from 'types/interfaces';
 
 const ContactModal: FC<ModalProps> = ({ isShowing, hide }) => {
@@ -34,24 +34,24 @@ const ContactModal: FC<ModalProps> = ({ isShowing, hide }) => {
           onClose={hide}
           aria-labelledby="form-dialog-title"
         >
-          <DialogTitle id="form-dialog-title">
-            <IconButton
-              aria-label="close"
-              onClose={hide}
-              style={{ position: 'absolute', right: 8, top: 8 }}
-            >
-              <CloseIcon />
-            </IconButton>
-          </DialogTitle>
-          <DialogContent sx={{ marginTop: 2 }}>
-            <FlightCard flightData={currentFlightData[0]} />
-            <Form />
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={hide} color="primary">
-              Отмена
-            </Button>
-          </DialogActions>
+          <Paper
+            sx={{ backgroundColor: (theme) => theme.palette.primary.light }}
+          >
+            <DialogTitle id="form-dialog-title">
+              <IconButton
+                href=""
+                aria-label="close"
+                onClick={hide}
+                style={{ position: 'absolute', right: 8, top: 8 }}
+              >
+                <CloseIcon />
+              </IconButton>
+            </DialogTitle>
+            <DialogContent sx={{ marginTop: 2 }}>
+              <FlightCard flightData={currentFlightData[0]} />
+              <Form />
+            </DialogContent>
+          </Paper>
         </Dialog>,
         document.body
       )

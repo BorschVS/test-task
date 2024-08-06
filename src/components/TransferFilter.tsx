@@ -9,18 +9,19 @@ import {
 } from '@mui/material';
 
 import {
-  setStopsFilter,
   setAllStops,
+  setStopsFilter,
   setStopsFilterStatus,
 } from '../redux/ducks/flights';
+
+import { ReduxState } from 'types/interfaces';
+import { AppDispatch } from 'redux/configureStore';
 
 import {
   CheckedIcon,
   GroupBox,
   UncheckedIcon,
 } from 'styled/TransferFilter.styled';
-import { ReduxState } from 'types/interfaces';
-import { AppDispatch } from 'redux/configureStore';
 
 export const TransferFilter = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -30,12 +31,12 @@ export const TransferFilter = () => {
 
   const handleCheckboxChange = useCallback(
     (event: SyntheticEvent<HTMLInputElement>) => {
-      const value = event.currentTarget.value;
-      const newStopsFilter = stopsFilter.includes(value)
-        ? stopsFilter.filter((stop) => stop !== value)
-        : [...stopsFilter, value];
+      const filterValue = Number(event.currentTarget.value);
+      const currentStopsFilter = stopsFilter.includes(filterValue)
+        ? stopsFilter.filter((stop: number) => stop !== filterValue)
+        : [...stopsFilter, filterValue];
 
-      dispatch(setStopsFilter(newStopsFilter));
+      dispatch(setStopsFilter(currentStopsFilter));
       dispatch(setStopsFilterStatus());
     },
     [stopsFilter, dispatch]
@@ -79,8 +80,8 @@ export const TransferFilter = () => {
             <Checkbox
               icon={<UncheckedIcon />}
               checkedIcon={<CheckedIcon />}
-              value={'0'}
-              checked={stopsFilter.includes('0')}
+              value={0}
+              checked={stopsFilter.includes(0)}
               onChange={handleCheckboxChange}
             />
           }
@@ -91,8 +92,8 @@ export const TransferFilter = () => {
             <Checkbox
               icon={<UncheckedIcon />}
               checkedIcon={<CheckedIcon />}
-              value={'1'}
-              checked={stopsFilter.includes('1')}
+              value={1}
+              checked={stopsFilter.includes(1)}
               onChange={handleCheckboxChange}
             />
           }
@@ -103,8 +104,8 @@ export const TransferFilter = () => {
             <Checkbox
               icon={<UncheckedIcon />}
               checkedIcon={<CheckedIcon />}
-              value={'2'}
-              checked={stopsFilter.includes('2')}
+              value={2}
+              checked={stopsFilter.includes(2)}
               onChange={handleCheckboxChange}
             />
           }
@@ -115,8 +116,8 @@ export const TransferFilter = () => {
             <Checkbox
               icon={<UncheckedIcon />}
               checkedIcon={<CheckedIcon />}
-              value={'3'}
-              checked={stopsFilter.includes('3')}
+              value={3}
+              checked={stopsFilter.includes(3)}
               onChange={handleCheckboxChange}
             />
           }

@@ -15,7 +15,7 @@ import {
 } from 'components';
 
 import { getFlights } from '../redux/ducks/flights';
-import { ReduxState } from 'interfaces';
+import { ReduxState } from 'types/interfaces';
 
 const Flights = () => {
   const dispatch = useDispatch();
@@ -24,13 +24,8 @@ const Flights = () => {
     dispatch(getFlights());
   }, [dispatch]);
 
-  const {
-    availableFlights,
-    filteredFlights,
-    stopsFilterStatus,
-    loading,
-    error,
-  } = useSelector((state: ReduxState) => state?.flights);
+  const { availableFlights, filteredFlights, stopsFilter, loading, error } =
+    useSelector((state: ReduxState) => state?.flights);
 
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -70,14 +65,14 @@ const Flights = () => {
               >
                 <RotatingLines width="4rem" strokeColor="#0e91fc" />
               </Box>
-            ) : !error && stopsFilterStatus ? (
+            ) : !loading && !error && stopsFilter.length ? (
               filteredFlights.map((flight) => (
                 <FlightCard key={flight.id} flightData={flight} />
               ))
             ) : (
+              !loading &&
               !error &&
-              !stopsFilterStatus &&
-              !filteredFlights.length &&
+              (!stopsFilter.length || stopsFilter.length === 4) &&
               availableFlights.map((flight) => (
                 <FlightCard key={flight.id} flightData={flight} />
               ))
