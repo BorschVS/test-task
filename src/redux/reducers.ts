@@ -1,11 +1,14 @@
-import { combineReducers } from 'redux';
-import { flights, form, modal, images } from './ducks';
+import { combineReducers } from '@reduxjs/toolkit';
+import flightsReducer from './ducks/flightsSlice';
+import formReducer from './ducks/formSlice';
+import modalReducer from './ducks/modalSlice';
+import imagesReducer from './ducks/imagesSlice';
 
-export const rootReducer = combineReducers({
-  flights,
-  form,
-  modal,
-  images,
+const rootReducer = combineReducers({
+  flights: flightsReducer,
+  form: formReducer,
+  modal: modalReducer,
+  images: imagesReducer,
 });
 
-export type RootState = ReturnType<typeof rootReducer>;
+export default rootReducer;

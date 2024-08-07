@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -6,13 +7,13 @@ import { Button, TextField } from '@mui/material';
 
 import { useModal } from 'hooks/useModal';
 
-import { setFormData } from '../redux/ducks/form';
+import { setFormData } from '../redux/ducks/formSlice';
 import { AppDispatch } from 'redux/configureStore';
 
 import { FormStyled } from 'styled/Form.styled';
 
-const Form = () => {
-  const dispatch = useDispatch<AppDispatch>();
+const Form: FC = () => {
+  const dispatch: AppDispatch = useDispatch();
 
   const { toggleModal } = useModal();
 
@@ -22,6 +23,7 @@ const Form = () => {
       phone: '',
       email: '',
     },
+
     validationSchema: Yup.object({
       name: Yup.string().required('Введите имя'),
       phone: Yup.number().required('Введите номер'),
@@ -30,7 +32,7 @@ const Form = () => {
         .required('Введите email'),
     }),
     onSubmit: (values) => {
-      dispatch(setFormData(JSON.stringify(values)));
+      dispatch(setFormData(values));
       toggleModal();
     },
   });

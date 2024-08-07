@@ -2,8 +2,8 @@ import { FC, SyntheticEvent } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { CHEAP_VALUE, FAST_VALUE } from '../constants';
-import { setCategoryFilter } from '../redux/ducks/flights';
 
+import { setCategoryFilter } from '../redux/ducks/flightsSlice';
 import { AppDispatch } from 'redux/configureStore';
 
 import {
@@ -14,12 +14,11 @@ import {
 } from 'styled/CategoryFilter.styled';
 
 export const CategoryFilter: FC = () => {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch: AppDispatch = useDispatch();
 
   const handleRadioCheck = (event: SyntheticEvent<HTMLInputElement>) => {
     dispatch(setCategoryFilter(event.currentTarget.value));
   };
-  // <RadioBox component="div">
   return (
     <RadioBox>
       <RadioLabel>

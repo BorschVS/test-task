@@ -1,8 +1,5 @@
 import { ReactNode, ElementType, MouseEventHandler } from 'react';
 
-import { SET_FORM_DATA } from '../redux/ducks/form';
-import { CHEAP_VALUE, FAST_VALUE } from '../constants';
-
 import {
   GET_FLIGHTS,
   SET_FLIGHTS,
@@ -12,13 +9,23 @@ import {
   SET_ALL_STOPS,
   SET_STOPS_FILTER_STATUS,
   SET_CATEGORY_FILTER,
-} from '../redux/ducks/flights';
-import { SET_CURRENT_FLIGHT, SET_IS_SHOWING } from '../redux/ducks/modal';
+} from '../redux/ducks/flightsSlice';
 import {
   GET_IMAGE_FAILURE,
   GET_IMAGE_REQUEST,
   GET_IMAGE_SUCCESS,
-} from '../redux/ducks/images';
+} from '../redux/ducks/imagesSlice';
+import { SET_CURRENT_FLIGHT, SET_IS_SHOWING } from '../redux/ducks/modalSlice';
+import { SET_FORM_DATA } from '../redux/ducks/formSlice';
+
+import { CHEAP_VALUE, FAST_VALUE } from '../constants';
+
+// navigation page
+export interface Page {
+  path: string;
+  element: JSX.Element;
+  index?: boolean;
+}
 
 // redux
 
@@ -54,7 +61,9 @@ export interface ModalState {
 }
 
 export interface FormState {
-  formData: string;
+  name: string;
+  phone: string;
+  email: string;
 }
 
 export interface ImagesState {
@@ -70,9 +79,7 @@ export interface ReduxState {
   images: ImagesState;
 }
 
-// /flights
-
-// actions
+// flights actions
 
 export interface GetFlightsAction {
   type: typeof GET_FLIGHTS;
@@ -113,16 +120,14 @@ export interface SetCategoryFilterAction {
   payload: typeof CHEAP_VALUE | typeof FAST_VALUE;
 }
 
-// /form
-
-// actions
+// form actions
 
 export interface SetFormDataAction {
   type: typeof SET_FORM_DATA;
   payload: string;
 }
 
-// /modal
+// modal actions
 
 export interface SetIsShowing {
   type: typeof SET_IS_SHOWING;
@@ -134,9 +139,7 @@ export interface SetCurrentFlight {
   payload: number;
 }
 
-// /images
-
-// actions
+// images actions
 
 export interface GetImageRequestAction {
   type: typeof GET_IMAGE_REQUEST;

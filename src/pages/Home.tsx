@@ -6,14 +6,14 @@ import { Button, Typography } from '@mui/material';
 
 import { BackgroundImage } from 'components';
 
-import { getFlights } from '../redux/ducks/flights';
 import { AppDispatch } from 'redux/configureStore';
+import { GET_FLIGHTS } from '../redux/ducks/flightsSlice';
 
 const Home = () => {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch: AppDispatch = useDispatch();
 
   const handleFlights = () => {
-    dispatch(getFlights());
+    dispatch({ type: GET_FLIGHTS });
   };
 
   return (

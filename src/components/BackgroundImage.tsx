@@ -4,12 +4,12 @@ import { useDispatch } from 'react-redux';
 import { Box } from '@mui/material';
 
 import { Image } from 'types/interfaces';
-import { AppDispatch } from 'redux/configureStore';
 
-import { getImageRequest } from '../redux/ducks/images';
+import { AppDispatch } from 'redux/configureStore';
+import { getImageRequest } from '../redux/ducks/imagesSlice';
 
 const BackgroundImage: FC<Image> = ({ imageName, children }) => {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getImageRequest(imageName));

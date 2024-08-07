@@ -14,14 +14,15 @@ import {
   AvatarImage,
 } from 'components';
 
-import { getFlights } from '../redux/ducks/flights';
 import { ReduxState } from 'types/interfaces';
+import { GET_FLIGHTS } from '../redux/ducks/flightsSlice';
+import { AppDispatch } from 'redux/configureStore';
 
 const Flights = () => {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getFlights());
+    dispatch({ type: GET_FLIGHTS });
   }, [dispatch]);
 
   const { availableFlights, filteredFlights, stopsFilter, loading, error } =

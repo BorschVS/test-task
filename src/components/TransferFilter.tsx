@@ -1,15 +1,15 @@
-import { SyntheticEvent, useCallback } from 'react';
+import { FC, SyntheticEvent, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Checkbox, FormGroup, Typography } from '@mui/material';
+
+import { ReduxState } from 'types/interfaces';
 
 import {
   setAllStops,
   setStopsFilter,
   setStopsFilterStatus,
-} from '../redux/ducks/flights';
-
-import { ReduxState } from 'types/interfaces';
+} from '../redux/ducks/flightsSlice';
 import { AppDispatch } from 'redux/configureStore';
 
 import {
@@ -19,8 +19,8 @@ import {
   UncheckedIcon,
 } from 'styled/TransferFilter.styled';
 
-export const TransferFilter = () => {
-  const dispatch = useDispatch<AppDispatch>();
+export const TransferFilter: FC = () => {
+  const dispatch: AppDispatch = useDispatch();
   const stopsFilter = useSelector(
     (state: ReduxState) => state?.flights?.stopsFilter
   );

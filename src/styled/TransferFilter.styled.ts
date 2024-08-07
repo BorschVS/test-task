@@ -1,8 +1,11 @@
 import styled from 'styled-components';
+
 import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
 import CheckBoxOutlineBlankOutlinedIcon from '@mui/icons-material/CheckBoxOutlineBlankOutlined';
-import theme from '../theme';
+
 import { FormControlLabel } from '@mui/material';
+
+import theme from '../theme';
 
 export const GroupBox = styled.div`
   width: 100%;

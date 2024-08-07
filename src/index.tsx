@@ -1,17 +1,17 @@
-//react
+//libs
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-//redux
 import { Provider } from 'react-redux';
-import store from './redux/configureStore';
 //mui
 import { CssBaseline } from '@mui/material';
 //theme
 import theme from './theme';
 import MixedThemeProvider from './MixedThemeProvider';
 //components
-import { App } from './components/index';
+import { App } from './components';
+//redux
+import store from './redux/configureStore';
 //styles
 import { GlobalStyle } from 'GlobalStyle.styled';
 

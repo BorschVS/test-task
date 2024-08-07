@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState } from 'react';
+import { FC, SyntheticEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
@@ -14,11 +14,11 @@ import MenuItem from '@mui/material/MenuItem';
 
 import { AvatarImage } from 'components';
 
-import { getFlights } from '../redux/ducks/flights';
 import { AppDispatch } from 'redux/configureStore';
+import { GET_FLIGHTS } from '../redux/ducks/flightsSlice';
 
-const ResponsiveAppBar = () => {
-  const dispatch = useDispatch<AppDispatch>();
+const ResponsiveAppBar: FC = () => {
+  const dispatch: AppDispatch = useDispatch();
   const [anchorElNav, setAnchorElNav] = useState<HTMLElement | null>(null);
 
   const pages = [
@@ -33,7 +33,7 @@ const ResponsiveAppBar = () => {
   const handleCloseNavMenu = () => {
     pages.forEach((page) => {
       if (page.name === 'Flights') {
-        dispatch(getFlights());
+        dispatch({ type: GET_FLIGHTS });
       }
     });
     setAnchorElNav(null);

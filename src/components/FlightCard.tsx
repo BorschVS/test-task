@@ -6,9 +6,10 @@ import { AvatarImage } from 'components';
 
 import { useModal } from 'hooks/useModal';
 
-import { setCurrentFlight } from '../redux/ducks/modal';
-
 import { FlightCardProps } from 'types/interfaces';
+
+import { setCurrentFlight } from '../redux/ducks/modalSlice';
+import { AppDispatch } from 'redux/configureStore';
 
 import {
   formatNumber,
@@ -26,7 +27,7 @@ import {
 } from 'styled/FlightCard.styled';
 
 const FlightCard: FC<FlightCardProps> = ({ flightData }) => {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
 
   const { isShowing, toggleModal } = useModal();
 

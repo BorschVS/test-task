@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { FC, Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { RotatingLines } from 'react-loader-spinner';
 
@@ -8,7 +8,7 @@ import { ResponsiveAppBar, ContactModal } from 'components';
 
 import { useModal } from 'hooks/useModal';
 
-const Layout = () => {
+const Layout: FC = () => {
   const { isShowing, toggleModal } = useModal();
 
   return (
