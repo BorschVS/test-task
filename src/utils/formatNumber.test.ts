@@ -10,15 +10,15 @@ describe('formatNumber', () => {
     expect(formatNumber(123)).toBe('123');
   });
 
-  it('should handle large numbers correctly', () => {
+  it('should format large numbers correctly', () => {
     expect(formatNumber(12345678901234)).toBe('12 345 678 901 234');
   });
 
-  it('should handle numbers with fewer than 1000 correctly', () => {
+  it('should format numbers with fewer than 1000 correctly', () => {
     expect(formatNumber(999)).toBe('999');
   });
 
-  it('should handle negative numbers', () => {
+  it('should format negative numbers', () => {
     expect(formatNumber(-1234567)).toBe('-1 234 567');
   });
 });

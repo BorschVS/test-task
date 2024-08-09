@@ -1,6 +1,5 @@
-// formatFlightDuration.test.ts
-
 import { formatFlightDuration } from './formatFlightDuration';
+export {};
 
 describe('formatFlightDuration', () => {
   it('should format duration correctly', () => {
@@ -10,7 +9,7 @@ describe('formatFlightDuration', () => {
     expect(formatFlightDuration(departure, duration)).toBe('2Ч 0М');
   });
 
-  it('should handle different times of day', () => {
+  it('should handle flight duration', () => {
     const departure = '2024-08-01T23:00:00Z';
     const duration = 75;
 

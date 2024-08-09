@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^5.16.4",
@@ -31,11 +32,21 @@
     "web-vitals": "^2.1.4",
     "yup": "^1.4.0"
   },
+  "jest": {
+    "verbose": true,
+    "moduleNameMapper": {
+      "^axios$": "axios/dist/node/axios.cjs"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/(?!(axios)/)"
+    ]
+  },
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "npx json-server --watch src/api/db.json --port 4444"
   },
   "eslintConfig": {
     "extends": [
