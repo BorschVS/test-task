@@ -30,6 +30,7 @@ const ContactModal: FC<ModalProps> = ({ isShowing, hide }) => {
   return isShowing
     ? createPortal(
         <Dialog
+          data-testid="contact-modal"
           open={isShowing}
           onClose={hide}
           aria-labelledby="form-dialog-title"

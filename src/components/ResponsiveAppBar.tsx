@@ -22,8 +22,8 @@ const ResponsiveAppBar: FC = () => {
   const [anchorElNav, setAnchorElNav] = useState<HTMLElement | null>(null);
 
   const pages = [
-    { name: 'Flights', link: '/flights' },
-    { name: 'Hotels', link: '/hotels' },
+    { name: 'Flights', link: '/flights', testId: 'flights-link' },
+    { name: 'Hotels', link: '/hotels', testId: 'hotels-link' },
   ];
 
   const handleOpenNavMenu = (event: SyntheticEvent<HTMLElement>) => {
@@ -40,10 +40,10 @@ const ResponsiveAppBar: FC = () => {
   };
 
   return (
-    <AppBar position="static" color="info">
+    <AppBar position="static" color="info" data-testid="responsive-app-bar">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Link to="/">
+          <Link to="/" data-testid="home-link">
             <AvatarImage
               component="div"
               imageName="plane.png"
@@ -57,11 +57,12 @@ const ResponsiveAppBar: FC = () => {
               justifyContent: 'end',
             }}
           >
-            {pages.map(({ name, link }) => (
+            {pages.map(({ name, link, testId }) => (
               <Link
                 key={name}
                 to={link}
                 style={{ textDecoration: 'none', color: 'inherit' }}
+                data-testid={testId}
               >
                 <Button
                   key={name}
@@ -109,11 +110,12 @@ const ResponsiveAppBar: FC = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map(({ name, link }) => (
+              {pages.map(({ name, link, testId }) => (
                 <MenuItem key={name} onClick={handleCloseNavMenu}>
                   <Link
                     to={link}
                     style={{ textDecoration: 'none', color: 'inherit' }}
+                    data-testid={testId}
                   >
                     {name}
                   </Link>

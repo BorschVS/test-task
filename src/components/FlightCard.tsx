@@ -77,7 +77,11 @@ const FlightCard: FC<FlightCardProps> = ({ flightData }) => {
   const returnFlightTransfers = returnSegmentData.stops.join(', ');
 
   return (
-    <CardBox onClick={handleModal} isShowing={isShowing}>
+    <CardBox
+      onClick={handleModal}
+      isShowing={isShowing}
+      data-testid="flight-card"
+    >
       <GroupBox>
         <Typography
           fontSize={24}

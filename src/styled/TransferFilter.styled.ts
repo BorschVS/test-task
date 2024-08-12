@@ -16,7 +16,7 @@ export const GroupBox = styled.div`
   border-radius: 5px;
 `;
 
-export const StyledFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
+export const StyledFormControlLabel = styled(FormControlLabel)(() => ({
   '& .MuiFormControlLabel-label': {
     fontWeight: theme.typography.fontWeightMedium,
   },

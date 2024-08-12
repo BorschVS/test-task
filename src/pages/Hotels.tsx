@@ -5,12 +5,12 @@ import { Container } from '@mui/material';
 
 import { AvatarImage } from 'components';
 
-const Flights = () => {
+const Hotels = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
-    <main>
+    <main data-testid="hotels-page">
       <Helmet>
         <title>Hotels</title>
       </Helmet>
@@ -29,4 +29,4 @@ const Flights = () => {
   );
 };
 
-export default Flights;
+export default Hotels;

@@ -17,9 +17,9 @@ const Home = () => {
   };
 
   return (
-    <main>
+    <main data-testid="home-page">
       <Helmet>
-        <title>Flights</title>
+        <title>Home</title>
       </Helmet>
 
       <BackgroundImage imageName="home-bg.jpg">
@@ -44,7 +44,7 @@ const Home = () => {
           >
             LetsFly!
           </Typography>{' '}
-          Airlanes
+          Airlines
         </Typography>
         <Typography
           textAlign="center"
@@ -57,7 +57,11 @@ const Home = () => {
         >
           PRESS THE BUTTON TO FLY!
         </Typography>
-        <Link to="flights" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link
+          to="flights"
+          style={{ textDecoration: 'none', color: 'inherit' }}
+          data-testid="flights-link"
+        >
           <Button
             variant="contained"
             sx={{

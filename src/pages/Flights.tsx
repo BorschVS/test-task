@@ -32,7 +32,7 @@ const Flights = () => {
   const mobile = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
-    <main>
+    <main data-testid="flights-page">
       <Helmet>
         <title>Flights</title>
       </Helmet>

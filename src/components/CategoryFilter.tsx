@@ -20,7 +20,7 @@ export const CategoryFilter: FC = () => {
     dispatch(setCategoryFilter(event.currentTarget.value));
   };
   return (
-    <RadioBox>
+    <RadioBox data-testid="category-filter">
       <RadioLabel>
         <RadioButton
           type="radio"

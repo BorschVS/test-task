@@ -12,7 +12,7 @@ const Layout: FC = () => {
   const { isShowing, toggleModal } = useModal();
 
   return (
-    <main>
+    <div>
       <Suspense
         fallback={
           <Box
@@ -30,7 +30,7 @@ const Layout: FC = () => {
         <Outlet />
         <ContactModal isShowing={isShowing} hide={toggleModal} />
       </Suspense>
-    </main>
+    </div>
   );
 };
 
