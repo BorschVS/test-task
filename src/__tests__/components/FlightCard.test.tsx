@@ -1,9 +1,15 @@
-import { screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import FlightCard from './FlightCard';
+import { screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
+import { renderWithRouter } from 'utils/test-helpers/renderWithRouter';
+import { renderWithProvider } from 'utils/test-helpers/renderWithProvider';
+
+import * as actions from '../../redux/ducks/modalSlice';
 
 import { FlightData } from 'types/interfaces';
-import { renderWithRouter } from 'tests/helpers/renderWithRouter';
+
+import FlightCard from 'components/FlightCard';
 
 const flightData: FlightData = {
   searchId: '11',
@@ -28,7 +34,18 @@ const flightData: FlightData = {
   ],
 };
 
+const mockDispatch = jest.fn();
+
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useDispatch: () => mockDispatch,
+}));
+
 describe('FlightCard Component', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   test('Should render flight details', async () => {
     renderWithRouter(<FlightCard flightData={flightData} />);
 
@@ -59,5 +76,25 @@ describe('FlightCard Component', () => {
     await waitFor(() => {
       expect(screen.getAllByText(/SVA/)).toHaveLength(2);
     });
+  });
+
+  test('Should render modal on click', () => {
+    const mockSetCurrentFlight = jest.spyOn(actions, 'setCurrentFlight');
+
+    renderWithRouter(<FlightCard flightData={flightData} />);
+
+    const flightCard = screen.getByTestId('flight-card');
+
+    userEvent.click(flightCard);
+    expect(mockDispatch).toHaveBeenCalled();
+    expect(mockSetCurrentFlight).toHaveBeenCalledWith('1');
+  });
+
+  test('FlightCard snapshot', () => {
+    const { asFragment } = renderWithProvider(
+      <FlightCard flightData={flightData} />
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

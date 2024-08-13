@@ -29,8 +29,6 @@ import {
 const FlightCard: FC<FlightCardProps> = ({ flightData }) => {
   const dispatch: AppDispatch = useDispatch();
 
-  console.log(flightData);
-
   const { isShowing, toggleModal } = useModal();
 
   const handleCurrentFlight = () => {

@@ -1,4 +1,4 @@
-export { formatNumber } from './formatNumber';
-export { formatTimeRange } from './formatTimeRange';
-export { formatFlightDuration } from './formatFlightDuration';
-export { formatTransfersWordEnding } from './formatTransfersWordEnding';
+export { formatNumber } from './romatters/formatNumber';
+export { formatTimeRange } from './romatters/formatTimeRange';
+export { formatFlightDuration } from './romatters/formatFlightDuration';
+export { formatTransfersWordEnding } from './romatters/formatTransfersWordEnding';

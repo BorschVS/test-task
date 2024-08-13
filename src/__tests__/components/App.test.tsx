@@ -2,8 +2,9 @@ import '@testing-library/jest-dom';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithRouter } from 'tests/helpers/renderWithRouter';
-import App from './App';
+import { renderWithRouter } from 'utils/test-helpers/renderWithRouter';
+
+import App from 'components/App';
 
 describe('Router page rendering test', () => {
   test('Should determine home page', async () => {
@@ -33,5 +34,11 @@ describe('Router page rendering test', () => {
 
     const hotelsPages = await screen.findAllByTestId('hotels-page');
     hotelsPages.forEach((page) => expect(page).toBeInTheDocument());
+  });
+
+  test('App snapshot', () => {
+    const { asFragment } = renderWithRouter(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -2,8 +2,9 @@ import '@testing-library/jest-dom';
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithRouter } from 'tests/helpers/renderWithRouter';
-import Layout from './Layout';
+import { renderWithRouter } from 'utils/test-helpers/renderWithRouter';
+
+import Layout from 'components/Layout';
 
 describe('Layout test', () => {
   test('Should render ResponsiveAppBar', () => {
@@ -46,5 +47,11 @@ describe('Layout test', () => {
     await waitFor(() => {
       expect(screen.getByTestId('hotels-page')).toBeInTheDocument();
     });
+  });
+
+  test('Layout snapshot', () => {
+    const { asFragment } = renderWithRouter(<Layout />);
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

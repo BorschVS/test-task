@@ -19,24 +19,27 @@ export const CategoryFilter: FC = () => {
   const handleRadioCheck = (event: SyntheticEvent<HTMLInputElement>) => {
     dispatch(setCategoryFilter(event.currentTarget.value));
   };
+
   return (
     <RadioBox data-testid="category-filter">
       <RadioLabel>
         <RadioButton
+          data-testid="radio-cheap"
           type="radio"
           name="filter"
           value={CHEAP_VALUE}
-          onChange={handleRadioCheck}
+          onClick={handleRadioCheck}
           defaultChecked
         />
         <RadioText>Самый дешевый</RadioText>
       </RadioLabel>
       <RadioLabel>
         <RadioButton
+          data-testid="radio-fast"
           type="radio"
           name="filter"
           value={FAST_VALUE}
-          onChange={handleRadioCheck}
+          onClick={handleRadioCheck}
         />
         <RadioText>Самый быстрый</RadioText>
       </RadioLabel>

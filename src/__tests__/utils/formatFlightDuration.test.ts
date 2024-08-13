@@ -1,29 +1,29 @@
-import { formatFlightDuration } from './formatFlightDuration';
+import { formatFlightDuration } from 'utils/romatters/formatFlightDuration';
 export {};
 
 describe('formatFlightDuration', () => {
-  it('should format duration correctly', () => {
+  test('should format duration correctly', () => {
     const departure = '2024-08-01T10:00:00Z';
     const duration = 120;
 
     expect(formatFlightDuration(departure, duration)).toBe('2Ч 0М');
   });
 
-  it('should handle flight duration', () => {
+  test('should handle flight duration', () => {
     const departure = '2024-08-01T23:00:00Z';
     const duration = 75;
 
     expect(formatFlightDuration(departure, duration)).toBe('1Ч 15М');
   });
 
-  it('should handle a duration that spans multiple days', () => {
+  test('should handle a duration that spans multiple days', () => {
     const departure = '2024-08-01T23:00:00Z';
     const duration = 1440;
 
     expect(formatFlightDuration(departure, duration)).toBe('24Ч 0М');
   });
 
-  it('should handle zero duration', () => {
+  test('should handle zero duration', () => {
     const departure = '2024-08-01T10:00:00Z';
     const duration = 0;
 

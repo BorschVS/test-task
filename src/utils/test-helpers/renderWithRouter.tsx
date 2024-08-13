@@ -1,15 +1,15 @@
-import { render } from '@testing-library/react';
-import { App } from 'components';
+import { render, RenderResult } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import store from 'redux/configureStore';
-import { act, ReactNode } from 'react';
+import { ReactNode } from 'react';
+import { App } from 'components';
 
 export const renderWithRouter = (
   component: ReactNode,
   initialRoute: string = '/'
-) => {
-  render(
+): RenderResult & { asFragment: () => DocumentFragment } => {
+  const utils = render(
     <Provider store={store}>
       <MemoryRouter initialEntries={[initialRoute]}>
         <App />
@@ -17,4 +17,9 @@ export const renderWithRouter = (
       </MemoryRouter>
     </Provider>
   );
+
+  return {
+    ...utils,
+    asFragment: utils.asFragment,
+  };
 };
