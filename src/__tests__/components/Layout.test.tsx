@@ -13,7 +13,7 @@ describe('Layout test', () => {
     expect(screen.getByTestId('responsive-app-bar')).toBeInTheDocument();
   });
 
-  test('Should render home page', async () => {
+  test('Should render home page on click', async () => {
     renderWithRouter(<Layout />, '/');
 
     const homeLinks = screen.getAllByTestId('home-link');
@@ -25,7 +25,7 @@ describe('Layout test', () => {
     });
   });
 
-  test('Should render flights page', async () => {
+  test('Should render flights page on click', async () => {
     renderWithRouter(<Layout />, '/flights');
 
     const flightsLinks = screen.getAllByTestId('flights-link');
@@ -49,7 +49,7 @@ describe('Layout test', () => {
     });
   });
 
-  test('Layout snapshot', () => {
+  test('Should match Layout snapshot', () => {
     const { asFragment } = renderWithRouter(<Layout />);
 
     expect(asFragment()).toMatchSnapshot();

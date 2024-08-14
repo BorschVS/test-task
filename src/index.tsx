@@ -17,7 +17,7 @@ import { GlobalStyle } from 'GlobalStyle.styled';
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 root.render(
-  // <StrictMode>
+  <StrictMode>
     <BrowserRouter basename="/">
       <MixedThemeProvider theme={theme}>
         <CssBaseline />
@@ -27,5 +27,5 @@ root.render(
         </Provider>
       </MixedThemeProvider>
     </BrowserRouter>
-  {/* </StrictMode> */}
+  </StrictMode>
 );

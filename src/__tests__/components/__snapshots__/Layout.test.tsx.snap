@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Layout test Layout snapshot 1`] = `
+exports[`Layout test Should match Layout snapshot 1`] = `
 <DocumentFragment>
   <div>
     <header

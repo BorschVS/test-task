@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Router page rendering test App snapshot 1`] = `
+exports[`Router page rendering test Should match App snapshot 1`] = `
 <DocumentFragment>
   <div>
     <header

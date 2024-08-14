@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { screen, waitFor } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { renderWithRouter } from 'utils/test-helpers/renderWithRouter';
@@ -46,51 +46,62 @@ describe('FlightCard Component', () => {
     jest.clearAllMocks();
   });
 
-  test('Should render flight details', async () => {
-    renderWithRouter(<FlightCard flightData={flightData} />);
-
-    await waitFor(() => {
+  describe('FlightCard', () => {
+    test('should render the correct price', () => {
+      renderWithRouter(<FlightCard flightData={flightData} />);
       expect(screen.getByText(/10 000 Р/)).toBeInTheDocument();
     });
 
-    await waitFor(() => {
+    test('should render the correct flight time', () => {
+      renderWithRouter(<FlightCard flightData={flightData} />);
       expect(screen.getByText(/10:00 - 12:00/)).toBeInTheDocument();
     });
 
-    await waitFor(() => {
+    test('should render the correct flight duration', () => {
+      renderWithRouter(<FlightCard flightData={flightData} />);
       expect(screen.getByText(/2Ч 0М/)).toBeInTheDocument();
     });
 
-    await waitFor(() => {
-      expect(screen.getAllByText(/1 пересадка/i).length).toBe(2);
-    });
-
-    await waitFor(() => {
+    test('should render the correct route from City A to City B', () => {
+      renderWithRouter(<FlightCard flightData={flightData} />);
       expect(screen.getByText(/City A - City B/i)).toBeInTheDocument();
     });
 
-    await waitFor(() => {
+    test('should render the correct return route from City B to City A', () => {
+      renderWithRouter(<FlightCard flightData={flightData} />);
       expect(screen.getByText(/City B - City A/i)).toBeInTheDocument();
     });
 
-    await waitFor(() => {
+    test('should render the correct number of transfers', () => {
+      renderWithRouter(<FlightCard flightData={flightData} />);
+      expect(screen.getAllByText(/1 пересадка/i)).toHaveLength(2);
+    });
+
+    test('should render the correct airport code', () => {
+      renderWithRouter(<FlightCard flightData={flightData} />);
       expect(screen.getAllByText(/SVA/)).toHaveLength(2);
     });
   });
 
-  test('Should render modal on click', () => {
-    const mockSetCurrentFlight = jest.spyOn(actions, 'setCurrentFlight');
-
+  test('Should call dispatch when clicking on flightCard', () => {
     renderWithRouter(<FlightCard flightData={flightData} />);
-
     const flightCard = screen.getByTestId('flight-card');
 
     userEvent.click(flightCard);
     expect(mockDispatch).toHaveBeenCalled();
+  });
+
+  test('Should call action when clicking on flightCard', () => {
+    const mockSetCurrentFlight = jest.spyOn(actions, 'setCurrentFlight');
+
+    renderWithRouter(<FlightCard flightData={flightData} />);
+    const flightCard = screen.getByTestId('flight-card');
+
+    userEvent.click(flightCard);
     expect(mockSetCurrentFlight).toHaveBeenCalledWith('1');
   });
 
-  test('FlightCard snapshot', () => {
+  test('Should match FlightCard snapshot', () => {
     const { asFragment } = renderWithProvider(
       <FlightCard flightData={flightData} />
     );

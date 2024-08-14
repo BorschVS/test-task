@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FlightCard Component FlightCard snapshot 1`] = `
+exports[`FlightCard Component Should match FlightCard snapshot 1`] = `
 <DocumentFragment>
   <div
     class="css-xv2kuy"
