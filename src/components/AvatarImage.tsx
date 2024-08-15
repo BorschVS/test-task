@@ -14,7 +14,7 @@ const AvatarImage: FC<Image> = ({
   component = 'div',
   width = 40,
   height = 40,
-  margin = '0',
+  margin = '10px',
 }) => {
   const dispatch: AppDispatch = useDispatch();
 

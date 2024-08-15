@@ -19,7 +19,7 @@ exports[`FlightCard Component Should match FlightCard snapshot 1`] = `
       >
         <span>
           <span
-            class="MuiAvatar-root MuiAvatar-circular css-106wf08-MuiAvatar-root"
+            class="MuiAvatar-root MuiAvatar-circular css-gh7mkj-MuiAvatar-root"
           >
             <img
               alt="S7 Airlines company logo"
