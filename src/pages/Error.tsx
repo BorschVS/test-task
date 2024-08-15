@@ -1,9 +1,6 @@
-import useMediaQuery from '@mui/material/useMediaQuery';
 import { Helmet } from 'react-helmet';
-import { useTheme } from '@mui/material/styles';
 import { Container, Typography } from '@mui/material';
 
-import { AvatarImage } from 'components';
 
 const Error = () => {
   return (
