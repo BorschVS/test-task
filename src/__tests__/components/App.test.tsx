@@ -14,7 +14,7 @@ describe('Router page rendering test', () => {
     homePages.forEach((page) => expect(page).toBeInTheDocument());
   });
 
-  test('Should open Flights page when clicking on button "FLY"', async () => {
+  test('Should open Flights page when clicking on "FLY" button', async () => {
     renderWithRouter(<App />, '/');
 
     const flightsLinks = screen.getAllByTestId('flights-link');

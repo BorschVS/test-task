@@ -46,41 +46,39 @@ describe('FlightCard Component', () => {
     jest.clearAllMocks();
   });
 
-  describe('FlightCard', () => {
-    test('should render the correct price', () => {
-      renderWithRouter(<FlightCard flightData={flightData} />);
-      expect(screen.getByText(/10 000 Р/)).toBeInTheDocument();
-    });
+  test('Should render the correct price', () => {
+    renderWithRouter(<FlightCard flightData={flightData} />);
+    expect(screen.getByText(/10 000 Р/)).toBeInTheDocument();
+  });
 
-    test('should render the correct flight time', () => {
-      renderWithRouter(<FlightCard flightData={flightData} />);
-      expect(screen.getByText(/10:00 - 12:00/)).toBeInTheDocument();
-    });
+  test('Should render the correct flight time', () => {
+    renderWithRouter(<FlightCard flightData={flightData} />);
+    expect(screen.getByText(/10:00 - 12:00/)).toBeInTheDocument();
+  });
 
-    test('should render the correct flight duration', () => {
-      renderWithRouter(<FlightCard flightData={flightData} />);
-      expect(screen.getByText(/2Ч 0М/)).toBeInTheDocument();
-    });
+  test('Should render the correct flight duration', () => {
+    renderWithRouter(<FlightCard flightData={flightData} />);
+    expect(screen.getByText(/2Ч 0М/)).toBeInTheDocument();
+  });
 
-    test('should render the correct route from City A to City B', () => {
-      renderWithRouter(<FlightCard flightData={flightData} />);
-      expect(screen.getByText(/City A - City B/i)).toBeInTheDocument();
-    });
+  test('Should render the correct route from City A to City B', () => {
+    renderWithRouter(<FlightCard flightData={flightData} />);
+    expect(screen.getByText(/City A - City B/i)).toBeInTheDocument();
+  });
 
-    test('should render the correct return route from City B to City A', () => {
-      renderWithRouter(<FlightCard flightData={flightData} />);
-      expect(screen.getByText(/City B - City A/i)).toBeInTheDocument();
-    });
+  test('Should render the correct return route from City B to City A', () => {
+    renderWithRouter(<FlightCard flightData={flightData} />);
+    expect(screen.getByText(/City B - City A/i)).toBeInTheDocument();
+  });
 
-    test('should render the correct number of transfers', () => {
-      renderWithRouter(<FlightCard flightData={flightData} />);
-      expect(screen.getAllByText(/1 пересадка/i)).toHaveLength(2);
-    });
+  test('Should render the correct number of transfers', () => {
+    renderWithRouter(<FlightCard flightData={flightData} />);
+    expect(screen.getAllByText(/1 пересадка/i)).toHaveLength(2);
+  });
 
-    test('should render the correct airport code', () => {
-      renderWithRouter(<FlightCard flightData={flightData} />);
-      expect(screen.getAllByText(/SVA/)).toHaveLength(2);
-    });
+  test('Should render the correct airport code', () => {
+    renderWithRouter(<FlightCard flightData={flightData} />);
+    expect(screen.getAllByText(/SVA/)).toHaveLength(2);
   });
 
   test('Should call dispatch when clicking on flightCard', () => {
