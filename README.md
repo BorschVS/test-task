@@ -20,7 +20,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### `npx json-server --watch src/api/db.json --port 4444`
+### `npm run server`
 
 Runs the mockup server for db.
 

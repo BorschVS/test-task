@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryFilter Should match CategoryFilter snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="css-mmmkij"
+    data-testid="category-filter"
+  >
+    <label
+      class="css-we1pt6"
+    >
+      <input
+        checked=""
+        class="css-13zcrbs"
+        data-testid="radio-cheap"
+        name="filter"
+        type="radio"
+        value="CHEAP_VALUE"
+      />
+      <span
+        class="css-opnvry"
+      >
+        Самый дешевый
+      </span>
+    </label>
+    <label
+      class="css-we1pt6"
+    >
+      <input
+        class="css-13zcrbs"
+        data-testid="radio-fast"
+        name="filter"
+        type="radio"
+        value="FAST_VALUE"
+      />
+      <span
+        class="css-opnvry"
+      >
+        Самый быстрый
+      </span>
+    </label>
+  </div>
+</DocumentFragment>
+`;
