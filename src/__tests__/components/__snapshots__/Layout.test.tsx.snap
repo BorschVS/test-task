@@ -100,6 +100,7 @@ exports[`Layout test Should match Layout snapshot 1`] = `
     >
       <div
         class="MuiBox-root css-1duo1bq"
+        data-testid="background-image"
       >
         <h1
           class="MuiTypography-root MuiTypography-h1 css-1chbnjg-MuiTypography-root"

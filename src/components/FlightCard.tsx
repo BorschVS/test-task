@@ -91,6 +91,7 @@ const FlightCard: FC<FlightCardProps> = ({ flightData }) => {
         </Typography>
         <Typography
           display="flex"
+          alignItems={'center'}
           gap={1}
           fontSize={24}
           fontWeight={(theme) => theme.typography.fontWeightBold}

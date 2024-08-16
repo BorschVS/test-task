@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AvatarImage component Should match FlightCard snapshot 1`] = `
+<DocumentFragment>
+  <span>
+    <div
+      class="MuiAvatar-root MuiAvatar-circular css-gh7mkj-MuiAvatar-root"
+    >
+      <img
+        alt="Default avatar"
+        class="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+        src="/images/default-avatar.png"
+      />
+    </div>
+  </span>
+</DocumentFragment>
+`;

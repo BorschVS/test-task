@@ -16,6 +16,7 @@ import { AvatarImage } from 'components';
 
 import { AppDispatch } from 'redux/configureStore';
 import { GET_FLIGHTS } from '../redux/ducks/flightsSlice';
+import theme from 'theme';
 
 const ResponsiveAppBar: FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -107,15 +108,28 @@ const ResponsiveAppBar: FC = () => {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: {
+                  xs: 'block',
+                  md: 'none',
+                },
               }}
             >
               {pages.map(({ name, link, testId }) => (
-                <MenuItem key={name} onClick={handleCloseNavMenu}>
+                <MenuItem
+                  key={name}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    backgroundColor: theme.palette.primary.contrastText,
+                  }}
+                >
                   <Link
                     to={link}
-                    style={{ textDecoration: 'none', color: 'inherit' }}
                     data-testid={testId}
+                    style={{
+                      textDecoration: 'none',
+                      color: theme.palette.primary.light,
+                      backgroundColor: 'inherit',
+                    }}
                   >
                     {name}
                   </Link>

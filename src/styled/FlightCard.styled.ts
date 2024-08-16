@@ -29,7 +29,7 @@ export const CardBox = styled.div<IsShowing>`
   cursor: default; 
 `}
 
-// here
+  // here
 
   &:hover {
     transform: scale(1.04);
@@ -59,6 +59,7 @@ export const TextBox = styled.div`
 export const GroupBox = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const InfoText = styled.p`

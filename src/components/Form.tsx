@@ -27,9 +27,7 @@ const Form: FC = () => {
     validationSchema: Yup.object({
       name: Yup.string().required('Введите имя'),
       phone: Yup.number().required('Введите номер'),
-      email: Yup.string()
-        .email('Введите корректный email')
-        .required('Введите email'),
+      email: Yup.string().email('Введите корректный email').required('Введите email'),
     }),
     onSubmit: (values) => {
       dispatch(setFormData(values));
@@ -75,13 +73,7 @@ const Form: FC = () => {
         error={formik.touched.email && Boolean(formik.errors.email)}
         helperText={formik.touched.email && formik.errors.email}
       />
-      <Button
-        sx={{ marginTop: 2 }}
-        color="info"
-        variant="contained"
-        fullWidth
-        type="submit"
-      >
+      <Button sx={{ marginTop: 2 }} color="info" variant="contained" fullWidth type="submit">
         Отправить
       </Button>
     </FormStyled>

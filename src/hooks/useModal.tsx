@@ -5,11 +5,12 @@ import { AppDispatch } from 'redux/configureStore';
 
 export const useModal = () => {
   const dispatch: AppDispatch = useDispatch();
-  const isShowing: boolean = useSelector(
-    (state: ReduxState) => state.modal.isShowing
-  );
+  const isShowing: boolean = useSelector((state: ReduxState) => state.modal.isShowing);
 
   const toggleModal = () => {
+    if (isShowing === undefined) {
+      dispatch(setIsShowing(false));
+    }
     dispatch(setIsShowing(!isShowing));
   };
 

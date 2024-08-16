@@ -17,6 +17,7 @@ const BackgroundImage: FC<Image> = ({ imageName, children }) => {
 
   return (
     <Box
+    data-testid="background-image"
       sx={{
         width: '100%',
         height: '100vh',

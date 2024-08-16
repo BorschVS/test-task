@@ -3,11 +3,11 @@
 exports[`FlightCard Component Should match FlightCard snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="css-xv2kuy"
+    class="css-1p1z3e0"
     data-testid="flight-card"
   >
     <div
-      class="css-uf1ume"
+      class="css-1mwn02k"
     >
       <p
         class="MuiTypography-root MuiTypography-body1 css-1entie5-MuiTypography-root"
@@ -15,7 +15,7 @@ exports[`FlightCard Component Should match FlightCard snapshot 1`] = `
         10 000 Р
       </p>
       <p
-        class="MuiTypography-root MuiTypography-body1 css-g1npfy-MuiTypography-root"
+        class="MuiTypography-root MuiTypography-body1 css-1kdgtcq-MuiTypography-root"
       >
         <span>
           <span
@@ -32,7 +32,7 @@ exports[`FlightCard Component Should match FlightCard snapshot 1`] = `
       </p>
     </div>
     <div
-      class="css-uf1ume"
+      class="css-1mwn02k"
     >
       <div
         class="css-1jibmi3"
@@ -78,7 +78,7 @@ exports[`FlightCard Component Should match FlightCard snapshot 1`] = `
       </div>
     </div>
     <div
-      class="css-uf1ume"
+      class="css-1mwn02k"
     >
       <div
         class="css-1jibmi3"

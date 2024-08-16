@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BackgroundImage component Should match FlightCard snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-1884vsy"
+    data-testid="background-image"
+  />
+</DocumentFragment>
+`;
