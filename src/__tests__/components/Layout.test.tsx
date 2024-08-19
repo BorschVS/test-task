@@ -30,6 +30,7 @@ describe('Layout test', () => {
     flightsLinks.forEach((link) => userEvent.click(link));
 
     const flightsPage = await screen.findByTestId('flights-page');
+
     expect(flightsPage).toBeInTheDocument();
   });
 

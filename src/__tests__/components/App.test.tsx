@@ -15,7 +15,7 @@ describe('Router page rendering test', () => {
   });
 
   test('Should open Flights page when clicking on "FLY" button', async () => {
-    renderWithRouter(<App />, '/');
+    renderWithRouter(<App />);
 
     const flightsLinks = screen.getAllByTestId('flights-link');
     flightsLinks.forEach((link) => {

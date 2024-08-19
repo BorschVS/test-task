@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransferFilter component Should match FlightCard snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-gnpbhQ bElNHe"
+  >
+    <h3
+      class="MuiTypography-root MuiTypography-h3 css-7a3q38-MuiTypography-root"
+    >
+      Количество пересадок
+    </h3>
+    <div
+      class="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
+    >
+      <label
+        class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd sc-la-DxNn kfTsrL css-j204z7-MuiFormControlLabel-root"
+      >
+        <span
+          class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+        >
+          <input
+            class="PrivateSwitchBase-input css-1m9pwf3"
+            data-indeterminate="false"
+            type="checkbox"
+            value="all"
+          />
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium sc-iCZwEW gLUodm css-i4bv87-MuiSvgIcon-root"
+            data-testid="CheckBoxOutlineBlankOutlinedIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 5v14H5V5zm0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2"
+            />
+          </svg>
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </span>
+        <span
+          class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
+        >
+          Все
+        </span>
+      </label>
+      <label
+        class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd sc-la-DxNn kfTsrL css-j204z7-MuiFormControlLabel-root"
+      >
+        <span
+          class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium Mui-checked MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+        >
+          <input
+            checked=""
+            class="PrivateSwitchBase-input css-1m9pwf3"
+            data-indeterminate="false"
+            type="checkbox"
+            value="0"
+          />
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium sc-knesRu ciMUDf css-i4bv87-MuiSvgIcon-root"
+            data-testid="CheckBoxOutlinedIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m0 16H5V5h14zM17.99 9l-1.41-1.42-6.59 6.59-2.58-2.57-1.42 1.41 4 3.99z"
+            />
+          </svg>
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </span>
+        <span
+          class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
+        >
+          Без пересадок
+        </span>
+      </label>
+      <label
+        class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd sc-la-DxNn kfTsrL css-j204z7-MuiFormControlLabel-root"
+      >
+        <span
+          class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+        >
+          <input
+            class="PrivateSwitchBase-input css-1m9pwf3"
+            data-indeterminate="false"
+            type="checkbox"
+            value="1"
+          />
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium sc-iCZwEW gLUodm css-i4bv87-MuiSvgIcon-root"
+            data-testid="CheckBoxOutlineBlankOutlinedIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 5v14H5V5zm0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2"
+            />
+          </svg>
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </span>
+        <span
+          class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
+        >
+          1 пересадка
+        </span>
+      </label>
+      <label
+        class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd sc-la-DxNn kfTsrL css-j204z7-MuiFormControlLabel-root"
+      >
+        <span
+          class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+        >
+          <input
+            class="PrivateSwitchBase-input css-1m9pwf3"
+            data-indeterminate="false"
+            type="checkbox"
+            value="2"
+          />
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium sc-iCZwEW gLUodm css-i4bv87-MuiSvgIcon-root"
+            data-testid="CheckBoxOutlineBlankOutlinedIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 5v14H5V5zm0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2"
+            />
+          </svg>
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </span>
+        <span
+          class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
+        >
+          2 пересадки
+        </span>
+      </label>
+      <label
+        class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd sc-la-DxNn kfTsrL css-j204z7-MuiFormControlLabel-root"
+      >
+        <span
+          class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+        >
+          <input
+            class="PrivateSwitchBase-input css-1m9pwf3"
+            data-indeterminate="false"
+            type="checkbox"
+            value="3"
+          />
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium sc-iCZwEW gLUodm css-i4bv87-MuiSvgIcon-root"
+            data-testid="CheckBoxOutlineBlankOutlinedIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 5v14H5V5zm0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2"
+            />
+          </svg>
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </span>
+        <span
+          class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
+        >
+          3 пересадки
+        </span>
+      </label>
+    </div>
+  </div>
+</DocumentFragment>
+`;

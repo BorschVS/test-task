@@ -23,3 +23,5 @@ export const renderWithRouter = (
     asFragment: utils.asFragment,
   };
 };
+
+export default renderWithRouter;
