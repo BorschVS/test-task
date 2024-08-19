@@ -45,11 +45,7 @@ const ResponsiveAppBar: FC = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Link to="/" data-testid="home-link">
-            <AvatarImage
-              component="div"
-              imageName="plane.png"
-              alt="Lets fly logo"
-            />
+            <AvatarImage component="div" imageName="plane.png" alt="Lets fly logo" />
           </Link>
           <Box
             sx={{
@@ -59,23 +55,13 @@ const ResponsiveAppBar: FC = () => {
             }}
           >
             {pages.map(({ name, link, testId }) => (
-              <Link
-                key={name}
-                to={link}
-                style={{ textDecoration: 'none', color: 'inherit' }}
-                data-testid={testId}
-              >
-                <Button
-                  key={name}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
-                >
+              <Link key={name} to={link} style={{ textDecoration: 'none', color: 'inherit' }} data-testid={testId}>
+                <Button key={name} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
                   {name}
                 </Button>
               </Link>
             ))}
           </Box>
-
           <Box
             sx={{
               flexGrow: 1,

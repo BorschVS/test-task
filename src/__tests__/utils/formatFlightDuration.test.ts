@@ -1,4 +1,4 @@
-import { formatFlightDuration } from 'utils/romatters/formatFlightDuration';
+import { formatFlightDuration } from 'utils/formatters/formatFlightDuration';
 export {};
 
 describe('formatFlightDuration', () => {

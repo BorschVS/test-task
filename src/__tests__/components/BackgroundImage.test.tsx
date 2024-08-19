@@ -45,7 +45,7 @@ describe('BackgroundImage component', () => {
     });
   });
 
-  test('should render children inside Box', () => {
+  test('Should render children inside the Box', () => {
     render(
       <BackgroundImage imageName={imageName}>{childText}</BackgroundImage>
     );

@@ -1,4 +1,4 @@
-import { formatTransfersWordEnding } from 'utils/romatters/formatTransfersWordEnding';
+import { formatTransfersWordEnding } from 'utils/formatters/formatTransfersWordEnding';
 export {};
 
 describe('formatTransfersWordEnding', () => {

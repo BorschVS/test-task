@@ -1,4 +1,4 @@
-import { formatNumber } from 'utils/romatters/formatNumber';
+import { formatNumber } from 'utils/formatters/formatNumber';
 export {};
 
 describe('formatNumber', () => {

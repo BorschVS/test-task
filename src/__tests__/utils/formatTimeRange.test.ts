@@ -1,4 +1,4 @@
-import { formatTimeRange } from 'utils/romatters/formatTimeRange';
+import { formatTimeRange } from 'utils/formatters/formatTimeRange';
 export {};
 
 describe('formatTimeRange', () => {
