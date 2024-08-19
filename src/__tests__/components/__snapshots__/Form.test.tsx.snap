@@ -4,6 +4,7 @@ exports[`Form component Should match FlightCard snapshot 1`] = `
 <DocumentFragment>
   <form
     class="sc-braxZu jclqgR"
+    data-testid="form"
   >
     <div
       class="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth MuiTextField-root css-1z10yd4-MuiFormControl-root-MuiTextField-root"

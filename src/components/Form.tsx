@@ -36,7 +36,7 @@ const Form: FC = () => {
   });
 
   return (
-    <FormStyled onSubmit={formik.handleSubmit}>
+    <FormStyled onSubmit={formik.handleSubmit} data-testid='form'>
       <TextField
         fullWidth
         margin="dense"
