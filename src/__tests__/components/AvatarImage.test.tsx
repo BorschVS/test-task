@@ -1,7 +1,9 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { useDispatch } from 'react-redux';
-import AvatarImage from 'components/AvatarImage';
+
+import { AvatarImage } from 'components';
+
 import { getImageRequest } from '../../redux/ducks/imagesSlice';
 
 jest.mock('react-redux', () => ({
@@ -53,7 +55,7 @@ describe('AvatarImage component', () => {
     expect(avatar).toHaveAttribute('alt', altText);
   });
 
-  test('Should match FlightCard snapshot', () => {
+  test('Should match AvatarImage snapshot', () => {
     const { asFragment } = render(<AvatarImage imageName={imageName} alt={altText} />);
 
     expect(asFragment()).toMatchSnapshot();

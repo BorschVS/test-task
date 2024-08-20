@@ -1,10 +1,20 @@
 import '@testing-library/jest-dom';
-import { screen, waitFor } from '@testing-library/react';
+import { cleanup, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
+import {App} from 'components';
 
 import { renderWithRouter } from 'utils/test-helpers/renderWithRouter';
 
-import App from 'components/App';
+
+afterEach(() => {
+  cleanup();
+  jest.clearAllMocks();
+});
+
+afterAll(() => {
+  jest.resetModules();
+});
 
 describe('Router page rendering test', () => {
   test('Should determine home page', async () => {

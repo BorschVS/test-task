@@ -28,7 +28,7 @@ describe('TransferFilter component', () => {
         jest.clearAllMocks();
     })
 
-    test('Should renders correctly', () => {
+    test('Should render TransferFilter correctly', () => {
         render(<TransferFilter />);
 
         const header = screen.getByText('Количество пересадок');
@@ -108,7 +108,7 @@ describe('TransferFilter component', () => {
         expect(mockDispatch).toHaveBeenCalledWith(setStopsFilter([0, 1, 2, 3]));
     });
 
-    test('Should match FlightCard snapshot', () => {
+    test('Should match TransferFilter snapshot', () => {
         const { asFragment } = render(
             <TransferFilter />
         );

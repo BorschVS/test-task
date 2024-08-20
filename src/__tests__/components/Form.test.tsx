@@ -1,8 +1,11 @@
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { useDispatch } from 'react-redux';
+
+import { Form } from 'components';
+
 import { setFormData } from '../../redux/ducks/formSlice';
-import Form from 'components/Form';
+
 import { useModal } from 'hooks/useModal';
 
 jest.mock('react-redux', () => ({
@@ -129,7 +132,7 @@ describe('Form component', () => {
     });
   });
 
-  test('Should match FlightCard snapshot', () => {
+  test('Should match Form snapshot', () => {
     const { asFragment } = render(<Form />);
 
     expect(asFragment()).toMatchSnapshot();

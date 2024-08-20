@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { screen } from '@testing-library/react';
+import { cleanup, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { renderWithRouter } from 'utils/test-helpers/renderWithRouter';
@@ -7,10 +7,21 @@ import { renderWithRouter } from 'utils/test-helpers/renderWithRouter';
 import Layout from 'components/Layout';
 
 describe('Layout test', () => {
+
+  afterEach(() => {
+    cleanup();
+    jest.clearAllMocks();
+  });
+
+  afterAll(() => {
+    jest.resetModules();
+  });
+
   test('Should render ResponsiveAppBar', () => {
     renderWithRouter(<Layout />);
 
-    expect(screen.getByTestId('responsive-app-bar')).toBeInTheDocument();
+    const appBar = screen.getByTestId('responsive-app-bar')
+    expect(appBar).toBeInTheDocument();
   });
 
   test('Should render home page on click', async () => {

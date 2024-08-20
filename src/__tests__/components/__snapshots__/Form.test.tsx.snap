@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Form component Should match FlightCard snapshot 1`] = `
+exports[`Form component Should match Form snapshot 1`] = `
 <DocumentFragment>
   <form
-    class="sc-braxZu jclqgR"
+    class="sc-dnaUSb fXBqFE"
     data-testid="form"
   >
     <div

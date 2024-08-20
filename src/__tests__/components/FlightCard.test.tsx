@@ -2,14 +2,14 @@ import '@testing-library/jest-dom';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithRouter } from 'utils/test-helpers/renderWithRouter';
-import { renderWithProvider } from 'utils/test-helpers/renderWithProvider';
+import { FlightCard } from 'components';
 
 import * as actions from '../../redux/ducks/modalSlice';
 
-import { FlightData } from 'types/interfaces';
+import { renderWithRouter } from 'utils/test-helpers/renderWithRouter';
+import { renderWithProvider } from 'utils/test-helpers/renderWithProvider';
 
-import FlightCard from 'components/FlightCard';
+import { FlightData } from 'types/interfaces';
 
 const flightData: FlightData = {
   searchId: '11',

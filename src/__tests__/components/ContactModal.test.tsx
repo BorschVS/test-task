@@ -1,10 +1,12 @@
-import React from 'react';
+import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
-import ContactModal from 'components/ContactModal';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { ContactModal } from 'components';
+
 import { useModal } from 'hooks/useModal';
+
 import { FlightData } from 'types/interfaces';
-import { useDispatch } from 'react-redux';
 
 jest.mock('react-redux', () => ({
     useSelector: jest.fn(),
@@ -66,22 +68,25 @@ describe('ContactModal', () => {
     test('Should render correctly when isShowing is true', () => {
         render(<ContactModal isShowing={true} hide={mockToggleModal} />);
 
-        expect(screen.getByTestId('contact-modal')).toBeInTheDocument();
+        const modal = screen.getByTestId('contact-modal');
+        expect(modal).toBeInTheDocument();
     });
 
     test('Should render FlightCard inside the modal', () => {
         render(<ContactModal isShowing={true} hide={mockToggleModal} />);
 
-        expect(screen.getByTestId('flight-card')).toBeInTheDocument();
+        const flightCard = screen.getByTestId('flight-card')
+        expect(flightCard).toBeInTheDocument();
     });
 
     test('Should render Form inside the modal', () => {
         render(<ContactModal isShowing={true} hide={mockToggleModal} />);
 
-        expect(screen.getByTestId('form')).toBeInTheDocument();
+        const form = screen.getByTestId('form')
+        expect(form).toBeInTheDocument();
     });
 
-    test('calls hide function when close button is clicked', () => {
+    test('Should call hide function when close button is clicked', () => {
         render(<ContactModal isShowing={true} hide={mockToggleModal} />);
 
         const closeButton = screen.getByLabelText('close');
@@ -90,13 +95,14 @@ describe('ContactModal', () => {
         expect(mockToggleModal).toHaveBeenCalledTimes(1);
     });
 
-    test('does not render modal when isShowing is false', () => {
+    test('Should dont render modal when isShowing is false', () => {
         render(<ContactModal isShowing={false} hide={mockToggleModal} />);
 
-        expect(screen.queryByTestId('contact-modal')).not.toBeInTheDocument();
+        const modal = screen.queryByTestId('contact-modal')
+        expect(modal).not.toBeInTheDocument();
     });
 
-    test('Should match FlightCard snapshot', () => {
+    test('Should match ContactModal snapshot', () => {
         const { asFragment } = render(
             <ContactModal isShowing={true} hide={mockToggleModal} />);
 

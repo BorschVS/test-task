@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AvatarImage component Should match FlightCard snapshot 1`] = `
+exports[`AvatarImage component Should match AvatarImage snapshot 1`] = `
 <DocumentFragment>
   <span>
     <div

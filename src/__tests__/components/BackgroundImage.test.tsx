@@ -1,8 +1,10 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { useDispatch } from 'react-redux';
-import { getImageRequest } from '../../redux/ducks/imagesSlice';
+
 import { BackgroundImage } from 'components';
+
+import { getImageRequest } from '../../redux/ducks/imagesSlice';
 
 jest.mock('react-redux', () => ({
   useDispatch: jest.fn(),
@@ -54,7 +56,7 @@ describe('BackgroundImage component', () => {
     expect(box).toHaveTextContent(childText);
   });
 
-  test('Should match FlightCard snapshot', () => {
+  test('Should match BackgroundImage snapshot', () => {
     const { asFragment } = render(<BackgroundImage imageName={imageName} />);
 
     expect(asFragment()).toMatchSnapshot();
